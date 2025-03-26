@@ -158,3 +158,51 @@ body.dark-mode nav ul li a:hover{
 iframe{
     border-radius: 10px;
 }
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 0 10px 0;
+    }
+
+    .container {
+        margin-top: 200px;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .service-box h2 {
+        margin: 10px 0;
+        font-size: 15px;
+        color: #007bff;
+    }
+    
+    .service-box p {
+        font-weight: bold;
+        margin: 0;
+        font-size: 12px;
+        color: rgb(49, 247, 0);
+    }
+    .service-box h3 {
+        font-weight: bold;
+        font-size: 12px;
+        color: rgb(0, 0, 0);
+    }
+    .service-box {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        width: 50%;
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 50px;
+        overflow: hidden;
+    }
+    iframe{
+        border-radius: 10px;
+        width: 100%;
+    }
+}

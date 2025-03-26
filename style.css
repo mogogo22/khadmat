@@ -172,3 +172,31 @@ body.dark-mode .noob{
 body.dark-mode .noob li a{
     color: #007afc;
 }
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 0 10px 0;
+    }
+
+    .container {
+        margin-top: 200px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .noob{
+        border-radius: 10px;
+    }
+    .noob h2{
+        font-size: 27px;
+    }
+    .noob h3{
+        font-size: 18px;
+    }
+    .noob li{
+        font-size: 12px;
+    }
+}
