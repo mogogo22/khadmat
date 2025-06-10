@@ -111,8 +111,10 @@ nav ul li a:hover {
 }
 
 .service-box p {
+    border-radius: 2px;
+    background-color: #001c3a;
     font-weight: bold;
-    margin: 0;
+    margin: 3px 0;
     font-size: 15px;
     color: rgb(49, 247, 0);
 }
@@ -123,6 +125,7 @@ nav ul li a:hover {
 }
 body.dark-mode .service-box p{
     color: #f4f4f4;
+    background-color: #00438a;
 }
 body.dark-mode .service-box h3{
     color: #fff;
