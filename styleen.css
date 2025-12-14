@@ -22,19 +22,25 @@ header{
     align-items: center;
     padding: 0 20px;
 }
-.logo{
-    text-decoration: none;
-    color: #28443F;
-    text-transform: uppercase;
-    font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bolder;
-    margin-right: 600px;
+.sd{
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: introText 2s ease-out forwards;
 }
-.logo:hover{
-    color: #285a51;
-}
-/* ====== تأثير البلور بدون ما يبوظ الشكل ====== */
+
+.s h2 span {
+    font-size: 30px;   /* قسم البرمجة */
+  }
+  
+  .s h3 {
+    font-size: 17px;   /* للتلمذة الثانوية */
+  }
+  
+  .aaa h5 {
+    font-size: 14px;   /* رقم الهاتف */
+  }
+
+  /* ====== تأثير البلور بدون ما يبوظ الشكل ====== */
 
 .blur-word {
     display: inline;
@@ -63,61 +69,7 @@ header{
     filter: none !important;
     opacity: 1 !important;
   }
- 
-h3{
-  color: #fff;
-  margin: 20px 0;
-}
-h4{
-  color: #fff;
-  direction: rtl;
-}
-
-.ab a{
-    text-decoration: none;
-    font-size: 23px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-    font-weight:900;
-    padding:9px 18px;
-    color: #fff;
-    background-color: unset;
-    margin: 0 10px;
-    border-radius:14px;
-    background:linear-gradient(135deg,#6d0f5d,#03022e);
-    transition:.3s;
-    box-shadow:0 10px 30px rgba(255,0,106,.45);
-}
-.ab a:hover{
-    background:linear-gradient(135deg,#bd1aa2,#100e97);
-    color: #000;
-    transition: 0.25s;
-    transform:translateY(-3px);
-    box-shadow:0 18px 40px #ffffff;
-}
-
-section{
-    padding: 30px 200px;
-}
-.s{
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-.sd{
-    text-align: right;
-    margin-left: 70%;
-    transition: 0.25s;
-}
-.sd{
-    opacity: 0;
-    transform: translateX(-20px);
-    animation: introText 2s ease-out forwards;
-}
+  
 
 @keyframes introText {
     from {
@@ -133,26 +85,73 @@ section{
 .cha{
     opacity: 0;
     transform: scale(0.8);
-    transition: 1s ease;
+    transition: 0.8s ease;
 }
 
 .cha.show{
     opacity: 1;
     transform: scale(1);
 }
-
+.logo{
+    text-decoration: none;
+    color: #28443F;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    margin-right: 600px;
+}
+.logo:hover{
+    color: #285a51;
+}
+.ab a{
+  text-decoration: none;
+  font-size: 23px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight:900;
+  padding:9px 18px;
+  color: #fff;
+  background-color: unset;
+  margin: 0 10px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#6d0f5d,#03022e);
+  transition:.3s;
+  box-shadow:0 10px 30px rgba(255,0,106,.45);
+}
+.ab a:hover{
+  background:linear-gradient(135deg,#bd1aa2,#100e97);
+  color: #000;
+  transition: 0.25s;
+  transform:translateY(-3px);
+  box-shadow:0 18px 40px #ffffff;
+}
+section{
+    padding: 30px 200px;
+}
+.s{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.sd{
+    padding: 10px 15px;
+    text-align: left;
+    transition: 0.25s;
+}
 .s h2{
     color: rgb(255, 255, 255);
-    font-size: 35px;
-    font-weight: bolder;
+    font-size: 20px;
+    font-weight: 900;
     cursor: context-menu;
-    background: linear-gradient(to top,  #ffffff, #36bbd3, #000000);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 .s h2 span{
     color: #f2fd7d;
-    font-size: 45px;
+    font-size: 35px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bolder;
     display: inline-block;
@@ -163,20 +162,7 @@ section{
 h5{
     color: #fff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    cursor: context-menu;
 }
-  .s h2 span {
-    font-size: 30px;   /* قسم البرمجة */
-  }
-  
-  .s h3 {
-    font-size: 17px;   /* للتلمذة الثانوية */
-  }
-  
-  .aaa h5 {
-    font-size: 14px;   /* رقم الهاتف */
-  }
-  
 .aaa a img{
     display: inline-block;
     width: 50px;
@@ -187,7 +173,7 @@ h5{
 }
 .s h3{
     color: rgb(231, 218, 218);
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 900;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -205,43 +191,56 @@ h5{
 }
 
 .ti{
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 40px;
-  color: #abd3cc;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 50px;
 }
 .ch{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .cha{
-  background-color: #000000;
-  color: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  transition: 0.3s;
-  box-shadow:0 12px 30px rgba(10,40,80,0.06);
-  background:linear-gradient(180deg,#6396da,#01192e)
+    width: 30%;
+    height: 400px;
+    padding: 20px;
+    margin: 15px;
+    color: #fff;
+    background-color: #000000;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow:0 12px 30px rgba(10,40,80,0.06);
+    background:linear-gradient(180deg,#6396da,#01192e)
 }
 .cha:hover{
-  transform: scale(1.05);
+    transform: scale(1.1);
 }
-.icon img{
-  width: 120px;
-  margin-bottom: 10px;
+.icon{
+    text-align: center;
 }
 .info h3{
-  color: #ffffff;
-  font-size: 18px;
-  margin: 10px 0;
+    color: #668fff;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 10px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .info p{
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgb(157, 206, 236);
+    font-size: 11px;
+    font-weight: 500;
+    text-align: right;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .mone{
     border-radius: 100px;
@@ -283,7 +282,6 @@ h6{
 .icon img{
     border-radius: 10%;
 }
-
 /* ====== إصلاح عرض الموبايل فورًا ====== */
 @media (max-width: 768px){
 
@@ -374,5 +372,4 @@ h6{
       opacity: 1;
     }
   }
-  
   
