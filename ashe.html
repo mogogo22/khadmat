@@ -458,73 +458,35 @@
         }
     </style>
     <style>
-/* الحاوية الأساسية */
-.container {
-    width: 95%; /* عشان ميبقاش لازق في حواف التليفون */
-    max-width: 1200px; 
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-/* الكارت الأساسي */
-.service-box {
-    display: flex;
-    flex-direction: row; /* جنب بعض في الكمبيوتر */
-    background: #1a1a1a;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(255,193,7,0.2);
-    width: 100%;
-    box-sizing: border-box; /* عشان الـ padding ميخرجش الكارت بره */
-}
-
-/* صورة الحساب */
-.account-img {
-    width: 40%; /* مساحتها في الكمبيوتر */
-    max-height: 500px;
-    object-fit: cover;
-    background: #fff;
-}
-
-/* محتوى الكلام */
-.content-padding {
-    flex: 1;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-}
-
-/* ✨ السحر كله هنا: تعديلات الموبايل ✨ */
-@media (max-width: 768px) {
-    .service-box {
-        flex-direction: column; /* الصورة هتبقى فوق والكلام تحتها في التليفون */
-    }
-
-    .account-img {
-        width: 100%; /* الصورة تاخد عرض الشاشة كله */
-        height: 250px; /* نصغر ارتفاعها عشان متبقاش طويلة أوي */
-    }
-
-    .content-padding {
-        padding: 15px; /* نصغر المسافات شوية */
-    }
-
-    h2 {
-        font-size: 1.4rem !important; /* نصغر العنوان عشان ميكسرش السطر */
-    }
-
-    .specs-list {
-        font-size: 0.95rem !important; /* نصغر الخط شوية عشان الكلام كتير */
-    }
-
-    .buy-btn {
-        font-size: 1rem !important;
-        padding: 15px !important;
-    }
-}
-</style>
+        /* ✨ السحر كله هنا: تعديلات الموبايل ✨ */
+        @media (max-width: 768px) {
+            .service-box {
+                flex-direction: column; /* الصورة هتبقى فوق والكلام تحتها في التليفون */
+            }
+        
+            .account-img {
+                width: 100%; /* الصورة تاخد عرض الشاشة كله */
+                height: 250px; /* نصغر ارتفاعها عشان متبقاش طويلة أوي */
+            }
+        
+            .content-padding {
+                padding: 15px; /* نصغر المسافات شوية */
+            }
+        
+            h2 {
+                font-size: 1.4rem !important; /* نصغر العنوان عشان ميكسرش السطر */
+            }
+        
+            .specs-list {
+                font-size: 0.95rem !important; /* نصغر الخط شوية عشان الكلام كتير */
+            }
+        
+            .buy-btn {
+                font-size: 1rem !important;
+                padding: 15px !important;
+            }
+        }
+        </style>
     <script>
         const toggleButton = document.getElementById('darkModeToggle');
         const iconCircle = document.querySelector('.icon-circle');
