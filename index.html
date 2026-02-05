@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدماT</title>
+    <meta 
+    property="og.title"
+    content="خدمات"/>
+    <meta 
+    property="og.discription"
+    content="خدماT"/>
+    <meta property="og.type" content="website"/>
+    <link rel="icon" href="img/خدماT.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="dark-mode-notice" class="dark-notice">
+        <span>🌙 يرجى تشغيل الوضع الداكن لأفضل منظر وتجربة بصرية!</span>
+        <button onclick="closeNotice()" class="close-notice-btn">&times;</button>
+    </div>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="img/خدماT2.png" width="60" alt="Logo">
+            </div>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="https://www.youtube.com/channel/UC5K3eI5ts9hk-2v-CIsWUhQ" target="_blank">قناتي</a></li>
+                    <li><a href="https://mogogo22.github.io/MOGOGO/" target="_blank">موقعي</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-nav">
+                <select onchange="location = this.value;">
+                    <option value="" selected disabled>القائمة</option>
+                    <option value="https://www.youtube.com/channel/UC5K3eI5ts9hk-2v-CIsWUhQ">قناتي</option>
+                    <option value="https://mogogo22.github.io/MOGOGO/">موقعي</option>
+                </select>
+            </div>
+
+            <div class="mode-switch">
+                <button id="darkModeToggle" class="mode-btn">
+                    <span class="icon-container">
+                        <span class="moon">🌙</span>
+                        <span class="sun">☀️</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="service-grid">
+            <div class="service-box">
+                <a href="Editorpage.html">
+                    <div class="icon">🎬</div>
+                    <h2>خدمة المونتاج</h2>
+                    <p>إضغط هنا لتفاصيل الخدمة</p>
+                </a>
+            </div>
+            <div class="service-box">
+                <a href="porgrampage.html">
+                    <div class="icon">💻</div>
+                    <h2>خدمة البرمجة</h2>
+                    <p>إضغط هنا لتفاصيل الخدمة</p>
+                </a>
+            </div>
+            <div class="service-box">
+                <a href="imgpage.html">
+                    <div class="icon">🎨</div>
+                    <h2>تصميم الصور</h2>
+                    <p>إضغط هنا لتفاصيل الخدمة</p>
+                </a>
+            </div>
+            <div class="service-box">
+                <a href="ashe.html">
+                    <div class="icon">🔑</div>
+                    <h2>حسابات عشوائية</h2>
+                    <p>إضغط هنا لتفاصيل الخدمة</p>
+                </a>
+            </div>
+        </div>
+
+        <section class="rules-section">
+            <div class="noob">
+                <div class="rules-category">
+                    <h2>📜 قواعد إضافة أي حساب في الموقع</h2>
+                    <ul class="main-list">
+                        <li>الأسعار تبدأ من أسبوع كحد أدنى.</li>
+                        <li>يجب الدفع أولاً قبل إضافة الحساب.</li>
+                        <li>ممنوع وضع أي حساب يحتوي على محتوى مخالف أو غير أخلاقي.</li>
+                        <li>ممنوع وضع أي شيء له علاقة بالاختراق.</li>
+                        <li>الحد الأقصى للإضافة: 2 حسابات يومياً.</li>
+                        <li>يجب إرسال صورة واحدة مع المواصفات والأسعار.</li>
+                        <li>في حال عدم بيع الحساب، لا يمكن استرجاع الأموال.</li>
+                        <li>بعد الإضافة، لسنا مسؤولين عن الحساب.</li>
+                        <li>عند انتهاء مدة الإضافة، سيتم إلغاء العرض تلقائياً.</li>
+                    </ul>
+                </div>
+    
+                <div class="price-section">
+                    <h3>💰 قائمة الأسعار (للأسبوع الواحدة)</h3>
+                    <div class="price-cards">
+                        <div class="price-item"><span>50.EG</span> جنيه مصري</div>
+                    </div>
+                </div>
+    
+                <hr class="separator">
+    
+                <h2>🛠️ قواعد الخدمات بالتفصيل</h2>
+                <div class="rules-grid">
+                    <div class="rule-block">
+                        <h3>🎮 حسابات (عشوائية)</h3>
+                        <ul>
+                            <li>أي حساب يُباع يتم كتابته في الأعلى.</li>
+                            <li>التسليم يتم بصورة إثبات مع المشتري في السيرفر.</li>
+                            <li>إذا كنت غير واثق، لا تشتري ❌</li>
+                            <li>الأسعار غير قابلة للنقاش ❌</li>
+                            <li>لحجز الحساب: دفع 10% من القيمة مسبقاً.</li>
+                        </ul>
+                    </div>
+    
+                    <div class="rule-block">
+                        <h3>🎨 خدمة تصميم الصور</h3>
+                        <ul>
+                            <li>وضح فكرتك بدقة لتوفير أفضل نتيجة.</li>
+                            <li>التعديلات بعد التسليم محدودة حسب الاتفاق.</li>
+                            <li>الدفع مسبق أو 10% لحجز الطلب.</li>
+                            <li>ممنوع طلب تصاميم مخالفة أو مسيئة.</li>
+                        </ul>
+                    </div>
+    
+                    <div class="rule-block">
+                        <h3>💻 البرمجة والمونتاج</h3>
+                        <ul>
+                            <li>تحديد تفاصيل المشروع بوضوح قبل البدء.</li>
+                            <li>مدة التنفيذ تعتمد على تعقيد العمل.</li>
+                            <li>يُمنع إعادة بيع الكود بدون إذن المطور.</li>
+                            <li>الدفع قبل البدء في العمل.</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <hr class="separator">
+    
+                <div class="rules-category">
+                    <h2>🌐 قواعد عامة حول الموقع</h2>
+                    <ul class="main-list secondary">
+                        <li>ممنوع النقاش حول الأسعار المحددة.</li>
+                        <li>التسليم يتم عبر <b>ديسكورد</b> / <b>واتساب</b> فقط.</li>
+                        <li>أي داعم للموقع يحصل على رتبة "المساعد".</li>
+                        <li>عند الدفع، يجب ألإثبات <b>بصورة</b> / <b>بفيديو</b>.</li>
+                        <li>الحد الأقصى للشراء: 3 خدمات يومياً لكل مستخدم.</li>
+                        <li>مهمة الـ Co-Owner تسليم الطلبات عند غياب صاحب الموقع.</li>
+                    </ul>
+                </div>
+    
+                <div class="contact-footer">
+                    <p class="status-tag">⚠️ الموقع مازال تحت التطوير</p>
+                    <h3>📞 للتواصل: <span class="phone">01559553360</span></h3>
+                    <a href="https://discord.gg/rxneXG2PxS" class="discord-btn" target="_blank">
+                        <img src="img/dis.png" width="40" alt="">
+                        دخول سيرفر الديسكورد
+                    </a>
+                    <a href="https://wa.me/qr/IK3VK7C26SEGG1" class="whatsapp-btn" target="_blank">
+                        <img src="img/whatsapp.png" width="35" alt="">
+                        إرسال رسالة , او إستفسار
+                    </a>
+                    <div class="footer-logo">
+                        <img src="img/خدماT2.png" width="100" alt="Logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="reviews-section">
+        <h2 class="section-title">ماذا يقول عملاؤنا 💬</h2>
+        
+        <div class="reviews-container">
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="img/d.jpg" alt="User" class="user-img">
+                    <div class="user-info">
+                        <h4>sigmaGaming</h4>
+                        <span>منذ أسبوع</span>
+                    </div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p class="review-text">بصراحة المونتاج عالمي والتسليم كان في وقت قياسي، أنصح أي حد عايز شغل احترافي يتعامل معاه.</p>
+            </div>
+    
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="img/gigachad.jpg" alt="User" class="user-img">
+                    <div class="user-info">
+                        <h4>gigaChad16</h4>
+                        <span>منذ شهر</span>
+                    </div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p class="review-text">اشتريت حساب ببجي والتعامل كان في غاية الأمانة، الحساب طلع أحسن من الوصف بكتير.</p>
+            </div>
+    
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="img/Screensh36.png" alt="User" class="user-img">
+                    <div class="user-info">
+                        <h4>مستر محقق 🕵️‍♂️</h4>
+                        <span>منذ يومين</span>
+                    </div>
+                    <div class="stars">⭐⭐⭐⭐</div>
+                </div>
+                <p class="review-text">برمجة الموقع كانت ممتازة وسريعة، والـ Dark Mode شكله يجنن!</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="img/Screenshot_2.png" alt="User" class="user-img">
+                    <div class="user-info">
+                        <h4>izen_king2</h4>
+                        <span>منذ 3 أسابيع</span>
+                    </div>
+                    <div class="stars">⭐⭐⭐</div>
+                </div>
+                <p class="review-text">هو انا متفق ان الموقع مضمون وأمن وكل حاجه ولكن , ليه خدمة تصميم الفيديو بتاخد وقت كبير ؟, يرجى الرد..</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="img/Screenshot_3.png" alt="User" class="user-img">
+                    <div class="user-info">
+                        <h4>ايزن عمك</h4>
+                        <span>منذ 5 أيام</span>
+                    </div>
+                    <div class="stars">⭐⭐⭐⭐</div>
+                </div>
+                <p class="review-text">والله يسطا الموقع فله وكل حاجه لكن ليه أسعار خدمة البرمجة غالية اوي كده ؟</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="img/Screenshot_9.png" alt="User" class="user-img">
+                    <div class="user-info">
+                        <h4>gintelman 😎</h4>
+                        <span>منذ 3 أيام</span>
+                    </div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p class="review-text">اقسم بالله انا مكنتش اعرف انه فيه موقع بالأسعار دي والأمان ده, والله يجدعان بيعمل الخدمة بجودة محترمة</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="img/Screenshot_213.png" alt="User" class="user-img">
+                    <div class="user-info">
+                        <h4>omar_XD</h4>
+                        <span>منذ أسبوعين</span>
+                    </div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p class="review-text">بصو انا اول مرة اشتري منه, والصراحة انا كنت خايف في الأول, بس بعد ما دفعت حرفياً الخدمة كانت إحترافية والتسليم كان فوري</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="img/Screenshot_250.png" alt="User" class="user-img">
+                    <div class="user-info">
+                        <h4>mohamedui12</h4>
+                        <span>منذ يومين</span>
+                    </div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p class="review-text">والله لو كان فيه نجمة زيادة كنت حطيت, الشخص ده بجد اسطورة, استمر ومتسمعش لحد ❤</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="img/Screenshot_773.png" alt="User" class="user-img">
+                    <div class="user-info">
+                        <h4>morad180</h4>
+                        <span>منذ 4 أيام</span>
+                    </div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p class="review-text">خدمة برمجة المواقع نضيفة جداً + انه شخص متواضع</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="img/Screenshot_776.png" alt="User" class="user-img">
+                    <div class="user-info">
+                        <h4>SadX</h4>
+                        <span>منذ يوم</span>
+                    </div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p class="review-text">اللي مفكر اني جاي اطبل زي الباقي بس انا اعرف الشخص ده في الحقيقة, وهو الصراحة محترم ومتواضع</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="img/Screenshot_796.png" alt="User" class="user-img">
+                    <div class="user-info">
+                        <h4>سبايدر غلبان</h4>
+                        <span>منذ 3 أيام</span>
+                    </div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p class="review-text">انا اول مرة اشوف في التسليم أمان بالشكل ده, أتمنى تكمل بجد</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="img/Screenshot_884.png" alt="User" class="user-img">
+                    <div class="user-info">
+                        <h4>سمارت Man</h4>
+                        <span>منذ شهر</span>
+                    </div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p class="review-text">الموقع ده كنز, بل إكتشاف حرفياً, والكلام ده من قلبي بجد</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="img/WhatsApp Image 2026-01-05 at 11.48.57 PM.jpeg" alt="User" class="user-img">
+                    <div class="user-info">
+                        <h4>شاورما الوحشين</h4>
+                        <span>منذ 3 أيام</span>
+                    </div>
+                    <div class="stars">⭐</div>
+                </div>
+                <p class="review-text">انا عارف انكم مستغربين بس انا حاطط نجمة واحدة لآنه بيمثل الشخص الي بيعمل الخدمات, عاوز اقولك كلمة , انت نجم ساطع</p>
+            </div>
+
+        </div>
+    </section>
+        </div>
+    </section>
+        </div>
+    </section>
+    
+    
+    <style>
+        /* تنسيقات قسم التعليقات */
+        .reviews-section {
+            padding: 60px 20px;
+            background: rgba(0,0,0,0.02);
+        }
+    
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+    
+        .review-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+    
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+    
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+    
+        .user-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #eee;
+            object-fit: cover;
+        }
+    
+        .user-info h4 {
+            margin: 0;
+            font-size: 1rem;
+        }
+    
+        .user-info span {
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+    
+        .stars {
+            margin-right: auto;
+            font-size: 0.8rem;
+            color: #ffc107;
+        }
+    
+        .review-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            font-style: italic;
+        }
+    
+        /* توافق الدارك مود */
+        body.dark-mode .review-card {
+            border-color: rgba(255,255,255,0.1);
+        }
+    </style>
+    <style>
+        /* تنسيق رسالة التنبيه */
+        .dark-notice {
+            display: none; /* مخفية في البداية وهنظهرها بالـ JS */
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(90deg, #ffc107, #e0a800);
+            color: #000;
+            padding: 15px 25px;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 90%;
+            max-width: 500px;
+            font-weight: bold;
+            direction: rtl;
+            border: 2px solid #000;
+        }
+        
+        .close-notice-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #000;
+            margin-right: 15px;
+            line-height: 1;
+        }
+        
+        /* لو الموقع فيه كلاس اسمه dark-mode أو body خلفيته سوداء، الرسالة هتختفي */
+        body.dark-mode .dark-notice {
+            display: none !important;
+        }
+        </style>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const notice = document.getElementById('dark-mode-notice');
+        
+        // وظيفة بتجيب لون خلفية الـ body الحقيقي دلوقتي
+        const bgColor = window.getComputedStyle(document.body).backgroundColor;
+        
+        // بنحول اللون لـ RGB ونشوف لو هو فاتح ولا غامق
+        // لو الخلفية بيضا أو فاتحة (القيم عالية)، الرسالة تظهر
+        const rgb = bgColor.match(/\d+/g);
+        if (rgb) {
+            const brightness = (0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2]);
+            
+            // لو الإضاءة أعلى من 128 (يعني الصفحة فاتحة)
+            if (brightness > 128) {
+                notice.style.display = 'flex';
+            } else {
+                notice.style.display = 'none';
+            }
+        }
+    });
+
+    function closeNotice() {
+        document.getElementById('dark-mode-notice').style.display = 'none';
+    }
+</script>
+    <script src="script.js"></script>
+</body>
+</html>

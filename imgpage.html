@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات : تصميم الصور</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap">
+    <link rel="icon" href="img/خدماT.png" type="image/png">
+
+    <style>
+        /* الأساسيات المتناسقة */
+        :root {
+            --primary: #e91e63; /* لون وردي/أحمر للتصميم */
+            --accent: #9c27b0;
+            --bg: #f5f5f5;
+            --text: #333;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        body.dark-mode {
+            --bg: #121212;
+            --text: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            transition: 0.3s;
+            padding-top: 90px;
+        }
+
+        /* الهيدر */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: white;
+            background: var(--primary);
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4); }
+
+        /* الحاوية */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .page-title {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* كارت التصميم */
+        .service-box {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: 0.4s;
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .img-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .service-box:hover .img-container img {
+            transform: scale(1.1);
+        }
+
+        .content-padding {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        mark {
+            background: var(--primary);
+            color: #fff;
+            padding: 2px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+
+        .service-box h2 {
+            font-size: 1.3rem;
+            margin: 15px 0 5px;
+        }
+
+        .resolution {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .prices {
+            background: rgba(233, 30, 99, 0.05);
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: auto;
+            border: 1px dashed var(--primary);
+        }
+
+        .prices p { margin: 5px 0; font-weight: bold;}
+        .resolution{
+            direction: ltr;
+        }
+        .buy-btn {
+            display: block;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover { background: #218838; letter-spacing: 1px; }
+
+        .section-divider {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin: 40px 0 20px;
+            font-size: 1.8rem;
+        }
+
+        /* زر الدارك مود */
+        .mode-btn {
+            background: var(--primary);
+            border: none;
+            width: 50px;
+            height: 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+        }
+        .icon-circle {
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+            transition: 0.4s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+        }
+        body.dark-mode .icon-circle { transform: translateX(-22px); }
+
+        @media (max-width: 600px) {
+            .container { grid-template-columns: 1fr; }
+        }
+    </style>
+    <style>
+        /* تنسيق رسالة التنبيه */
+        .dark-notice {
+            display: none; /* مخفية في البداية وهنظهرها بالـ JS */
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(90deg, #ffc107, #e0a800);
+            color: #000;
+            padding: 15px 25px;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 90%;
+            max-width: 500px;
+            font-weight: bold;
+            direction: rtl;
+            border: 2px solid #000;
+        }
+        
+        .close-notice-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #000;
+            margin-right: 15px;
+            line-height: 1;
+        }
+        
+        /* لو الموقع فيه كلاس اسمه dark-mode أو body خلفيته سوداء، الرسالة هتختفي */
+        body.dark-mode .dark-notice {
+            display: none !important;
+        }
+        </style>
+</head>
+<body>
+    <div id="dark-mode-notice" class="dark-notice">
+        <span>🌙 يرجى تشغيل الوضع الداكن لأفضل منظر وتجربة بصرية!</span>
+        <button onclick="closeNotice()" class="close-notice-btn">&times;</button>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <img src="img/خدماT2.png" width="50" alt="Logo">
+            <nav>
+                <a href="index.html" class="back-btn">الرئيسية</a>
+            </nav>
+            <button id="darkModeToggle" class="mode-btn">
+                <div class="icon-circle">🌙</div>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title">🎨 معرض خدمات تصميم الصور</h1>
+
+        <div class="service-box">
+            <div class="img-container">
+                <img src="img/12.png" alt="Light Design">
+            </div>
+            <div class="content-padding">
+                <mark>الكمية غير محدودة</mark>
+                <h2>تصميم صورة خفيفة</h2>
+                <p class="resolution">1920 X 1080 : الدقة</p>
+                <div class="prices">
+                    <p>💰 30.EG جنيه</p>
+                </div>
+                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="img-container">
+                <img src="img/11.png" alt="Light Design">
+            </div>
+            <div class="content-padding">
+                <mark>الكمية غير محدودة</mark>
+                <h2>تصميم صورة عصرية</h2>
+                <p class="resolution">1920 X 1080 : الدقة</p>
+                <div class="prices">
+                    <p>💰 50.EG جنيه</p>
+                </div>
+                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="img-container">
+                <img src="img/10.png" alt="Light Design">
+            </div>
+            <div class="content-padding">
+                <mark>الكمية غير محدودة</mark>
+                <h2>تصميم صورة ألعاب</h2>
+                <p class="resolution">1920 X 1080 : الدقة</p>
+                <div class="prices">
+                    <p>💰 30.EG جنيه</p>
+                </div>
+                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="img-container">
+                <img src="img/15.jpg" alt="Light Design">
+            </div>
+            <div class="content-padding">
+                <mark>الكمية غير محدودة</mark>
+                <h2>تصميم صورة إحترافية</h2>
+                <p class="resolution">1920 X 1080 : الدقة</p>
+                <div class="prices">
+                    <p>💰 50.EG جنيه</p>
+                </div>
+                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="img-container">
+                <img src="img/14.png" alt="Light Design">
+            </div>
+            <div class="content-padding">
+                <mark>الكمية غير محدودة</mark>
+                <h2>تصميم صورة ملهمة</h2>
+                <p class="resolution">1920 X 1080 : الدقة</p>
+                <div class="prices">
+                    <p>💰 70.EG جنيه</p>
+                </div>
+                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="img-container">
+                <img src="img/13.png" alt="Light Design">
+            </div>
+            <div class="content-padding">
+                <mark>الكمية غير محدودة</mark>
+                <h2>تصميم صورة للقصص</h2>
+                <p class="resolution">1920 X 1080 : الدقة</p>
+                <div class="prices">
+                    <p>💰 50.EG جنيه</p>
+                </div>
+                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
+            </div>
+        </div>
+
+        <h1 class="section-divider">🎁 ملحقات المصممين</h1>
+
+<div class="container" style="margin-top: 0;"> 
+    
+    <div class="service-box">
+        <div class="img-container">
+            <img src="img/photo.png" alt="PSD Packs">
+        </div>
+        <div class="content-padding">
+            <mark>الكمية غير محدودة</mark>
+            <h2>تصميمات PSD جاهزة</h2>
+            <p class="resolution">قابلة للتعديل بالكامل</p>
+            <div class="prices">
+                <p>💰 30.EG جنيه</p>
+            </div>
+            <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
+            <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
+        </div>
+    </div>
+
+    <div class="service-box">
+        <div class="img-container">
+            <img src="img/photo.png" alt="PSD Packs">
+        </div>
+        <div class="content-padding">
+            <mark>الكمية غير محدودة</mark>
+            <h2>جميع الخطوط للمونتاج والتصميم 🔥</h2>
+            <p class="resolution">أكثر من (+50) خط</p>
+            <div class="prices">
+                <p>💰 50.EG جنيه</p>
+            </div>
+            <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
+            <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
+        </div>
+    </div>
+
+    <div class="service-box">
+        <div class="img-container">
+            <img src="img/photo.png" alt="PSD Packs">
+        </div>
+        <div class="content-padding">
+            <mark>الكمية غير محدودة</mark>
+            <h2>ميمز MOHAND WORLD للمونتاج</h2>
+            <p class="resolution">أكثر من (+700) ميمز 🎬</p>
+            <div class="prices">
+                <p>💰 300.EG جنيه</p>
+            </div>
+            <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
+            <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
+        </div>
+    </div>
+
+</div>
+
+    </main>
+
+    <script>
+        const toggleButton = document.getElementById('darkModeToggle');
+        const iconCircle = document.querySelector('.icon-circle');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            iconCircle.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            iconCircle.textContent = '☀️';
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const notice = document.getElementById('dark-mode-notice');
+            
+            // وظيفة بتجيب لون خلفية الـ body الحقيقي دلوقتي
+            const bgColor = window.getComputedStyle(document.body).backgroundColor;
+            
+            // بنحول اللون لـ RGB ونشوف لو هو فاتح ولا غامق
+            // لو الخلفية بيضا أو فاتحة (القيم عالية)، الرسالة تظهر
+            const rgb = bgColor.match(/\d+/g);
+            if (rgb) {
+                const brightness = (0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2]);
+                
+                // لو الإضاءة أعلى من 128 (يعني الصفحة فاتحة)
+                if (brightness > 128) {
+                    notice.style.display = 'flex';
+                } else {
+                    notice.style.display = 'none';
+                }
+            }
+        });
+    
+        function closeNotice() {
+            document.getElementById('dark-mode-notice').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
