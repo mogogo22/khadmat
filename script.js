@@ -34,3 +34,16 @@ const x = setInterval(function() {
     document.getElementById("minutes").innerText = minutes;
     document.getElementById("seconds").innerText = seconds;
 }, 1000);
+
+function updateTimer() {
+    const daysElement = document.getElementById("days");
+    
+    // 1. أضف كلاس الحركة
+    daysElement.classList.add("changing");
+    
+    // 2. انتظر قليلاً ثم حدث الرقم
+    setTimeout(() => {
+        daysElement.innerText = "new_value"; // ضع هنا القيمة الجديدة
+        daysElement.classList.remove("changing");
+    }, 300); // 300ms هو نفس مدة الـ transition في الـ CSS
+}

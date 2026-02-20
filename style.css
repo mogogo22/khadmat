@@ -431,3 +431,73 @@ body.dark-mode h2,
 body.dark-mode p {
     color: #e0e0e0 !important;
 }
+
+
+/* الأنماط الحالية مع تحسين التجاوب */
+.countdown-container {
+    text-align: center;
+    margin: 20px 10px; /* تقليل الهامش الجانبي للشاشات الصغيرة */
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* تقليل المسافة بين المربعات في الشاشات الصغيرة */
+    margin-top: 15px;
+    flex-wrap: wrap; /* السماح للمربعات بالنزول لسطر جديد لو ضاقت الشاشة */
+}
+
+.time-box {
+    background: #1a2a6c;
+    color: #d4af37;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 65px; /* تصغير الحد الأدنى للعرض */
+    font-weight: bold;
+}
+
+.time-box span {
+    display: block;
+    font-size: 1.2rem; /* تصغير حجم الخط قليلاً للموبايل */
+}
+
+/* التعديلات الخاصة بالهواتف (الشاشات التي عرضها أقل من 480 بكسل) */
+@media (max-width: 480px) {
+    .countdown-container h2 {
+        font-size: 1.1rem; /* تصغير العنوان ليناسب الشاشة */
+    }
+    
+    .time-box {
+        min-width: 55px;
+        padding: 8px 5px;
+    }
+
+    .time-box span {
+        font-size: 1rem;
+    }
+    
+    .time-box small {
+        font-size: 0.7rem;
+    }
+}
+/* تأثير حركي عند تغيير الأرقام */
+.time-box span {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: block;
+    font-size: 1.5rem;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* حالة التغيير (يمكنك استدعاء هذا الكلاس عبر الجافاسكريبت) */
+.time-box span.changing {
+    opacity: 0;
+    transform: translateY(-10px);
+}
