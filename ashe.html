@@ -269,6 +269,384 @@
         body.dark-mode .dark-notice {
             display: none !important;
         }
+
+        /* تصميم الكارت الملوكي */
+.service-box {
+    background: var(--card-bg);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.service-box:hover {
+    box-shadow: 0 0 25px rgba(255, 193, 7, 0.3);
+    transform: translateY(-15px);
+}
+
+/* شارة الخصم المدمجة (شريط مائل) */
+.discount-ribbon {
+    position: absolute;
+    top: 20px;
+    left: -30px;
+    width: 150px;
+    background: #ff5722;
+    color: white;
+    text-align: center;
+    transform: rotate(-45deg);
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 5px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* تأثير لمعان رمضان (يمكن إضافته كـ pseudo-element) */
+.service-box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: 0.5s;
+    pointer-events: none;
+}
+.service-box:hover::after { opacity: 1; }
+/* تنسيق الكارت الجديد */
+.service-box {
+    background: var(--card-bg);
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #333;
+    transition: 0.4s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.service-box:hover { border-color: var(--primary); transform: translateY(-5px); }
+
+/* شارة الخصم المدمجة (فاجرة) */
+.ramadan-badge {
+    position: absolute;
+    top: 20px;
+    left: -35px;
+    width: 150px;
+    background: linear-gradient(45deg, #ffc107, #ff9800);
+    color: #000;
+    text-align: center;
+    transform: rotate(-45deg);
+    font-weight: bold;
+    z-index: 10;
+    padding: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* انيميشن الفانوس */
+.lantern-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+    animation: swing 2s ease-in-out infinite;
+    z-index: 5;
+}
+
+@keyframes swing {
+    0%, 100% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+}
+
+.price-tag-custom {
+    background: #ff5722;
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 15px 0;
+    position: relative;
+}
+/* تنسيقات الكارد الرئيسي - "الملوكي" */
+.service-box {
+    background: #1a1a1a; /* خلفية داكنة فخمة */
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #ffc107; /* إطار ذهبي لامع */
+    transition: all 0.5s ease-in-out; /* أنيميشن سلس عند التفاعل */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.7); /* ظل عميق لإبراز الكارت */
+    display: flex;
+    flex-direction: column; /* الكارد يكون عمودي افتراضيا */
+}
+
+/* تأثير التفاعل على الكارد */
+.service-box:hover {
+    transform: translateY(-8px) scale(1.01); /* يرتفع قليلاً ويكبر */
+    box-shadow: 0 15px 50px rgba(255, 193, 7, 0.4); /* توهج ذهبي أقوى */
+}
+
+/* شارة الخصم الفاخرة المدمجة */
+.discount-ribbon-royal {
+    position: absolute;
+    top: 20px;
+    left: -40px; /* دفعها للخارج أكثر لتبدأ من الحافة */
+    width: 180px; /* عرض أكبر للتمييز */
+    background: linear-gradient(45deg, #e64a19, #ff5722, #e64a19); /* تدرج لوني جذاب */
+    color: white;
+    text-align: center;
+    transform: rotate(-45deg);
+    font-weight: bold;
+    font-size: 1rem; /* حجم خط أكبر */
+    padding: 8px 0; /* مساحة داخلية أكبر */
+    z-index: 20; /* فوق كل شيء */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4); /* ظل عميق للبروز */
+    letter-spacing: 1px; /* تباعد الحروف */
+}
+
+/* مكان الفانوس المتحرك */
+.ramadan-lantern-animated {
+    position: absolute;
+    top: 25px; /* أعلى قليلاً */
+    right: 25px; /* من اليمين */
+    width: 70px; /* حجم مناسب للفانوس */
+    height: 70px;
+    z-index: 15; /* فوق محتوى الكارد */
+    animation: swing 2.5s ease-in-out infinite alternate; /* أنيميشن التأرجح */
+    transform-origin: top center; /* نقطة الارتكاز للتأرجح */
+}
+
+/* مفتاح الأنيميشن للفانوس */
+@keyframes swing {
+    0% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    100% { transform: rotate(-10deg); }
+}
+
+/* تنسيق الأسعار الجديدة الفاخرة */
+.price-display-royal {
+    background: linear-gradient(90deg, #ffc107, #e0a800); /* تدرج ذهبي */
+    color: #333; /* لون نص غامق ليبرز على الذهبي */
+    padding: 5px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 10px 0 10px; /* مسافات مناسبة */
+    font-size: 0.8rem; /* حجم سعر كبير */
+    font-weight: bold;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3); /* ظل خفيف */
+    border: 1px solid rgba(255,255,255,0.2); /* إطار خفيف */
+}
+
+.price-display-royal .old-price {
+    text-decoration: line-through;
+    color: #666; /* لون أغمق للسعر القديم */
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.price-display-royal .current-price {
+    color: #000; /* السعر الجديد باللون الأسود ليبرز بشدة */
+    font-size: 2.5rem; /* حجم أكبر للسعر النهائي */
+    font-weight: 900; /* خط سميك جداً */
+    letter-spacing: 1px;
+}
+
+/* تنسيق أزرار الشراء الفاخرة */
+.buy-btn-royal {
+    display: block;
+    padding: 18px 25px; /* حجم زر أكبر */
+    margin-top: 15px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem; /* حجم خط أكبر */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.buy-btn-royal.discord {
+    background: #7289da; /* لون ديسكورد الأصلي */
+    color: white;
+}
+.buy-btn-royal.discord:hover {
+    background: #5b6eae;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(114, 137, 218, 0.4);
+}
+
+.buy-btn-royal.whatsapp {
+    background: #25d366; /* لون واتساب الأصلي */
+    color: white;
+}
+.buy-btn-royal.whatsapp:hover {
+    background: #1da851;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* باقي التنسيقات العامة للكارت */
+.account-img {
+    width: 100%;
+    height: 300px; /* ارتفاع ثابت للصورة */
+    object-fit: cover; /* لضمان تغطية الصورة للمساحة */
+    border-bottom: 3px solid var(--primary); /* خط ذهبي فاصل */
+}
+
+.content-padding {
+    padding: 30px;
+    flex: 1;
+}
+
+.service-box h2 {
+    font-size: 2.2rem; /* حجم أكبر للعنوان */
+    margin: 15px 0 25px; /* مسافات مناسبة */
+    color: var(--primary);
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.5); /* توهج خفيف للعنوان */
+    letter-spacing: 1.5px; /* تباعد الحروف */
+}
+
+.specs-list {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+    background: rgba(255, 193, 7, 0.08); /* خلفية شفافة خفيفة جداً */
+    padding: 20px;
+    border-radius: 18px;
+    border: 1px dashed rgba(255, 193, 7, 0.3); /* حدود منقطة للتميز */
+}
+
+.specs-list li {
+    margin-bottom: 15px; /* مسافات أكبر بين العناصر */
+    font-size: 1rem; /* حجم خط مناسب */
+    display: flex;
+    align-items: flex-start; /* ليكون النص متناسق */
+    gap: 15px; /* مسافة بين الأيقونة والنص */
+    line-height: 1.6; /* تباعد الأسطر */
+    padding-right: 15px; /* مسافة داخلية */
+    border-right: 4px solid var(--primary); /* خط ذهبي سميك على اليمين */
+    background: rgba(255,255,255,0.03); /* خلفية خفيفة */
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+.specs-list li span { color: #00d4ff; font-weight: bold; } /* لون مميز للنقاط الرئيسية */
+.specs-list li b { color: #ffeb3b; } /* لون ذهبي للكلمات المهمة */
+
+
+.account-id {
+    background: #333;
+    color: #eee;
+    padding: 12px;
+    border-radius: 10px;
+    font-family: 'monospace', 'Cairo', sans-serif;
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    border: 1px solid #555;
+}
+
+/* تنسيقات الموبايل */
+@media (max-width: 768px) {
+    .service-box { flex-direction: column; }
+    .account-img { width: 100%; height: 250px; }
+    .content-padding { padding: 20px; }
+    .service-box h2 { font-size: 1.8rem; }
+    .specs-list li { font-size: 0.9rem; margin-bottom: 12px; padding: 8px 10px; }
+    .price-display-royal { font-size: 1.5rem; padding: 15px; }
+    .price-display-royal .current-price { font-size: 2rem; }
+    .buy-btn-royal { font-size: 1rem; padding: 15px 20px; }
+    .discount-ribbon-royal { font-size: 0.85rem; width: 140px; left: -35px; }
+    .ramadan-lantern-animated { width: 50px; height: 50px; top: 15px; right: 15px; }
+}
+/* تعريف المتغيرات حسب الثيم */
+:root {
+    --card-bg: #1a1a1a;
+    --text-color: #e0e0e0;
+    --accent-color: #ffc107;
+    --list-bg: rgba(255, 255, 255, 0.05);
+}
+
+.light-mode {
+    --card-bg: #ffffff;
+    --text-color: #333333; /* لون أسود للنصوص في الوضع الفاتح */
+    --accent-color: #d39e00;
+    --list-bg: rgba(0, 0, 0, 0.05);
+}
+
+/* الكارت */
+.service-box {
+    background: var(--card-bg);
+    color: var(--text-color); /* هنا السر: اللون يتغير تلقائياً */
+    border-radius: 25px;
+    position: relative;
+    border: 2px solid var(--accent-color);
+    transition: 0.3s;
+}
+
+/* تنسيق النصوص داخل الوصف */
+.specs-list li {
+    background: var(--list-bg);
+    color: var(--text-color);
+    border-right: 4px solid var(--accent-color);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* العناوين والكلمات المهمة تظل واضحة */
+.specs-list li span { color: #0088cc !important; } /* لون أزرق يناسب الفاتح والغامق */
+.specs-list li b { color: var(--accent-color); }
+/* تنسيق الـ Details والـ Summary */
+details {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    margin: 20px 0;
+    overflow: hidden;
+    transition: 0.4s;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+summary {
+    padding: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--accent-color);
+    list-style: none; /* إخفاء السهم الافتراضي */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+/* السهم الفخم */
+summary::after {
+    content: '▼';
+    font-size: 0.8rem;
+    transition: transform 0.4s;
+}
+
+details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+/* الأنيميشن عند الفتح */
+details[open] .specs-list {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
         </style>
 </head>
 <body>
@@ -293,133 +671,200 @@
         <h1 class="page-title">🔥 متجر الحسابات النادرة 🔥</h1>
 
         <div class="service-box">
-            <span class="badge-exclusive">حصري!</span>
-            <img src="img/16.png" class="account-img" alt="Roblox Account">
+            <div class="discount-ribbon-royal">خصم 30%</div>
+            <div class="ramadan-lantern-animated">
+                <img src="img/ramdan.png" alt="Ramadan Lantern" style="width: 100%; height: 100%;">
+            </div>
+        
+            <img src="img/16.png" style="width: 100%;height: 100%;" class="account-img" alt="Roblox Account">
+            
             <div class="content-padding">
                 <h2>حــســابــي الــشــخــصــي 👑</h2>
-                <ul class="specs-list" style="text-align: right; direction: rtl;">
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
-                        <span style="color: #00d4ff;">🍎 9 فواكه دائمة (Perms):</span> 
-                        تمتع بالقوة المطلقة مع أهم الفواكه وعلى رأسهم <b>Buddha</b> و <b>Portal</b>.
-                    </li>
-                    
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
-                        <span style="color: #00d4ff;">💰 شنطة النوادر:</span> 
-                        مليانة فواكه قوية وأبرزها <b>Control</b>، بالإضافة لكل الفواكه المنتظرة للـ <b>Rework</b>.
-                    </li>
-        
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
-                        <span style="color: #00d4ff;">⚔️ ترسانة كاملة:</span> 
-                        يمتلك الحساب <b>جميع</b> الأسلحة، الجنات، الملابس، والملحقات بلا استثناء.
-                    </li>
-        
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
-                        <span style="color: #00d4ff;">🔥 قمة التطوير V4:</span> 
-                        جميع الريسات مطورة لـ <b>V4</b>، مع كل أساليب القتال وألوان الهاكي النادرة.
-                    </li>
-        
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
-                        <span style="color: #00d4ff;">💀 باونتي الأساطير (+5M):</span> 
-                        باونتي فوق الـ 5 مليون مع ألقاب نادرة تجعل اسمك مرعباً في السيرفر.
-                    </li>
-        
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
-                        <span style="color: #00d4ff;">💎 بنك العملات:</span> 
-                        كميات ضخمة من الـ <b>Fragments</b> والـ <b>Beli</b> لتغطية أي تحديث قادم.
-                    </li>
-        
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ff1707; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
-                        <span>✨ إضافات خاصة:</span> 
-                        مصروف عليه آلاف الروبكس، يحتوي على سكنات نادرة وأنيميشن <b>"قعدة سكونا"</b> الفخمة.
-                    </li>
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ff1707; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>💎 تاريخ مصروف عليه:</b> الحساب قديم ومصروف عليه آلاف الروبكس، مليان سكنات وإكسسوارات (Limited) مستحيل ترجع للمتجر.</li>
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ff1707; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>🛋️ قعدة سكونا (Sukuna Sit):</b> الحساب يمتلك أنيميشن "قعدة سكونا" الفخمة اللي بتديك هيبة خرافية وسط الناس.</li>
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ff1707; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>🚀 جاهز للسيطرة:</b> الحساب لفل ماكس في أغلب المابات المشهورة، يعني هتبدأ من القمة علطول.</li>
-                </ul>
+                
+                <details>
+                    <summary>
+                        عرض تفاصيل الحساب المميزات
+                    </summary>
+                    <ul class="specs-list" style="text-align: right; direction: rtl; padding: 15px;">
+                        <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
+                            <span style="color: #00d4ff;">🍎 9 فواكه دائمة (Perms):</span> 
+                            تمتع بالقوة المطلقة مع أهم الفواكه وعلى رأسهم <b>Buddha</b> و <b>Portal</b>.
+                        </li>
+                        <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
+                            <span style="color: #00d4ff;">💰 شنطة النوادر:</span> 
+                            مليانة فواكه قوية وأبرزها <b>Control</b>، بالإضافة لكل الفواكه المنتظرة للـ <b>Rework</b>.
+                        </li>
+                        <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
+                            <span style="color: #00d4ff;">⚔️ ترسانة كاملة:</span> 
+                            يمتلك الحساب <b>جميع</b> الأسلحة، الجنات، الملابس، والملحقات بلا استثناء.
+                        </li>
+                        <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
+                            <span style="color: #00d4ff;">🔥 قمة التطوير V4:</span> 
+                            جميع الريسات مطورة لـ <b>V4</b>، مع كل أساليب القتال وألوان الهاكي النادرة.
+                        </li>
+                        <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
+                            <span style="color: #00d4ff;">💀 باونتي الأساطير (+5M):</span> 
+                            باونتي فوق الـ 5 مليون مع ألقاب نادرة تجعل اسمك مرعباً في السيرفر.
+                        </li>
+                        <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
+                            <span style="color: #00d4ff;">💎 بنك العملات:</span> 
+                            كميات ضخمة من الـ <b>Fragments</b> والـ <b>Beli</b> لتغطية أي تحديث قادم.
+                        </li>
+                        <li style="margin-bottom: 20px; border-right: 4px solid #ff1707; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
+                            <span>✨ إضافات خاصة:</span> 
+                            مصروف عليه آلاف الروبكس، يحتوي على سكنات نادرة وأنيميشن <b>"قعدة سكونا"</b> الفخمة.
+                        </li>
+                        <li style="margin-bottom: 20px; border-right: 4px solid #ff1707; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>💎 تاريخ مصروف عليه:</b> الحساب قديم ومصروف عليه آلاف الروبكس، مليان سكنات وإكسسوارات (Limited) مستحيل ترجع للمتجر.</li>
+                        <li style="margin-bottom: 20px; border-right: 4px solid #ff1707; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>🛋️ قعدة سكونا (Sukuna Sit):</b> الحساب يمتلك أنيميشن "قعدة سكونا" الفخمة اللي بتديك هيبة خرافية وسط الناس.</li>
+                        <li style="margin-bottom: 20px; border-right: 4px solid #ff1707; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>🚀 جاهز للسيطرة:</b> الحساب لفل ماكس في أغلب المابات المشهورة، يعني هتبدأ من القمة علطول.</li>
+                    </ul>
+                </details>
                 <div class="account-id">User: MOGOGO70</div>
-                <div class="price-tag">1299.EG جنيه</div>
-                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 إتمام عملية الشراء (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 إتمام عملية الشراء (واتساب)</a>
+                <div class="price-display-royal">
+                    <span class="old-price">1299 EG</span>
+                    <span class="current-price">910 EG</span>
+                </div>
+                
+                <a href="https://discord.gg/rxneXG2PxS" class="buy-btn-royal discord">🛒 إتمام الشراء (ديسكورد)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" class="buy-btn-royal whatsapp">🛒 إتمام الشراء (واتساب)</a>
             </div>
         </div>
-        <div class="service-box">
-            <span class="badge-exclusive">حصري!</span>
-            <img src="img/17.png" class="account-img" alt="PUBG Account">
-            <div class="content-padding">
-                <h2>حساب ببجي العالمية (PUBG)</h2>
-                <ul class="specs-list">
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>هيبة الساحة:</b> حساب لفل 54 مع لبسات ميثيك (Mythic) أسطورية تخلي خصومك تعملك ألف حساب قبل المواجهة.</li>
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>ترسانة دمار شامل:</b> 3 أسلحة بتتطور (منهم لفل 3) بـ Kill Message أسطوري يرعب السيرفر مع كل كيل.</li>
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>نوادر الـ AKM:</b> يمتلك "أرنوبتي الجميلة" أندر سكن AKM في اللعبة، مع سلاح الفرعون وسلاح M24 المطور.</li>
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>استعراض ملوكي:</b> داسيا مطورة بالكامل ونيد (قنبلة) مطورة بتأثيرات بصرية خرافية بتكمل فخامتك في الماب.</li>
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>ألقاب الأساطير:</b> الحساب فيه 6 ألقاب نادرة تثبت إنك لاعب "قديم" ومحترف من الطراز الأول.</li>
-                </ul>
-                <div class="account-id">ID: 52178646075</div>
-                <div class="price-tag">499.EG جنيه</div>
-                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 إتمام عملية الشراء (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 إتمام عملية الشراء (واتساب)</a>
-            </div>
-        </div>
+        
 
-        <div class="service-box">
-            <span class="badge-exclusive">حصري!</span>
-            <img src="img/18.png" class="account-img" alt="Roblox Account">
-            <div class="content-padding">
-                <h2>حساب روبلوكس (Roblox)</h2>
-                <ul class="specs-list" style="direction: rtl; text-align: right; list-style: none; padding: 0; font-size: 1.15rem; line-height: 1.8;">
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
-                        <b>💰 مخزن الروبكس المفتوح:</b> الحساب ده مش لسه بادئ، ده "حصالة" روبكس بقالها سنين شحن وتطوير. آلاف الروبكس اتصرفت في الشوب عشان السكنات والخدمات، يعني بتشتري حساب قيمته بتزيد مش بتقل، استثمار حقيقي يا صاحبي.
-                    </li>
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
-                        <b>👕 دولاب الـ "ممنوعات":</b> انسى السكنات العادية، الحساب فيه "ترسانة" لبس وأطقم كاملة <b>Limited</b> وتيشرتات كانت بتنزل في مناسبات معينة ومبقتش موجودة. هتكون المميز في أي ماب تدخله، والكل هيسألك "جبت اللبس ده منين؟".
-                    </li>
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
-                        <b>💎 إكسسوارات وهيبة الـ OG:</b> مليان أجنحة خرافية، شعور نادرة، وقبعات أسطورية من إيفنتات قديمة جداً. الحاجات دي دلوقتي بتعتبر "تحف فنية" في روبلوكس ومستحيل ترجع الشوب تاني، يعني معاك قطع أثرية في حسابك.
-                    </li>
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
-                        <b>🌪️ أسطورة Steel Ball و Blox Fruits:</b> الحساب ده "وحش" في ماب <b>Steel Ball (Steel Ball Run)</b> ومنجز فيها ليفلات تخلصك من وجع الدماغ، ده غير إنك ملك في <b>Blox Fruits</b> ومعاك فواكه وتطويرات تخليك تفرتك أي حد يقف قدامك.
-                    </li>
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
-                        <b>🏡 مسيطر في Garden و Pet Sim:</b> مش سايب ماب في حالها، لفل عالي جداً في <b>Garten of Banban (Garden)</b> ومطور حسابك في <b>Pet Sim</b>.. الحساب ده متعوب عليه بجد ومش محتاج منك غير إنك تدخل تلعب وتستمتع بالسيطرة علطول.
-                    </li>
-                    <li style="margin-bottom: 20px; border-right: 4px solid #313131; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
-                        ويوجد به حالياً روب 🔥
-                    </li>
-                </ul>
-                <div class="account-id">User: htmlcssjsphp37</div>
-                <div class="price-tag">899.EG جنيه</div>
-                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 إتمام عملية الشراء (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 إتمام عملية الشراء (واتساب)</a>
-            </div>
-        </div>
 
-        <div class="service-box">
-            <span class="badge-exclusive">حصري!</span>
-            <img src="img/19.png" class="account-img" alt="Roblox Account">
-            <div class="content-padding">
-                <h2>حساب روبلوكس (Roblox)</h2>
-                <ul class="specs-list" style="direction: rtl; text-align: right;">
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>مخزن الروبكس:</b> الحساب مصروف عليه آلاف الروبكس عبر السنين، يعني مش مجرد لبس عادي ده استثمار حقيقي.</li>
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>خزانة ملابس أسطورية:</b> بيحتوي على مئات التيشرتات والبنطلونات والأطقم الكاملة (Limited Edition) اللي مستحيل تلاقيها دلوقتي.</li>
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>إكسسوارات نادرة:</b> الحساب مليان "أجنحة، شعور، وقبعات" كانت بتنزل في إيفنتات قديمة ومستحيل ترجع للمتجر تاني.</li>
-                    <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>تطوير شامل ومتقدم:</b> الحساب مش بس شكل، ده واصل لمستويات عالية جداً في أشهر المابات (Blox Fruits, Pet Sim) وجاهز للسيطرة فوراً.</li>
-                    
-                    <hr style="opacity: 0.1; margin: 15px 0;">
-                    
-                    <li style="color: #ff5722;margin-bottom: 20px; border-right: 4px solid #ffffff; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>🦊 قوة الكيتسوني:</b> في عالم روبلوكس، الحساب واكل فاكهة <b>Kitsune</b> (أغلى وأقوى فاكهة)، ولفله ممتاز وجاهز للجلد.</li>
-                    <li style="color: #ff5722;margin-bottom: 20px; border-right: 4px solid #ffffff; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>💃 رقصات ليميتد:</b> يحتوي الحساب على رقصات <b>Limited</b> نادرة مش عند أي حد، وملابس جاهزة بتنسيقات (Outfits) خرافية.</li>
-                    <li style="color: #ff5722;margin-bottom: 20px; border-right: 4px solid #ffffff; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>🏗️ متلفل في مابات كتير:</b> الحساب متعوب عليه ومنجز خطوات كبيرة في مابات مشهورة، يعني هتوفر على نفسك تعب شهور.</li>
-                    <li style="color: #ff5722;margin-bottom: 20px; border-right: 4px solid #ffffff; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>💎 مصروف عليه روبكس:</b> الحساب استثمار حقيقي، مصروف عليه كمية روبكس محترمة في السكنات والخدمات (Gamepasses).</li>
-                </ul>
-                <div class="account-id">User: ufndym</div>
-                <div class="price-tag">499.EG جنيه</div>
-                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 إتمام عملية الشراء (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 إتمام عملية الشراء (واتساب)</a>
-            </div>
+
+<div class="service-box">
+    <div class="discount-ribbon-royal">خصم 30%</div>
+    <div class="ramadan-lantern-animated">
+        <img src="img/ramdan.png" alt="Ramadan Lantern" style="width: 100%; height: 100%;">
+    </div>
+
+    <img src="img/17.png" style="width: 100%;height: 100%;" class="account-img" alt="Roblox Account">
+    
+    <div class="content-padding">
+        <h2>حساب ببجي العالمية (PUBG)</h2>
+        
+        <details>
+            <summary>
+                عرض تفاصيل الحساب المميزات
+            </summary>
+            <ul class="specs-list" style="text-align: right; direction: rtl; padding: 15px;">
+                <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>هيبة الساحة:</b> حساب لفل 54 مع لبسات ميثيك (Mythic) أسطورية تخلي خصومك تعملك ألف حساب قبل المواجهة.</li>
+                <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>ترسانة دمار شامل:</b> 3 أسلحة بتتطور (منهم لفل 3) بـ Kill Message أسطوري يرعب السيرفر مع كل كيل.</li>
+                <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>نوادر الـ AKM:</b> يمتلك "أرنوبتي الجميلة" أندر سكن AKM في اللعبة، مع سلاح الفرعون وسلاح M24 المطور.</li>
+                <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>استعراض ملوكي:</b> داسيا مطورة بالكامل ونيد (قنبلة) مطورة بتأثيرات بصرية خرافية بتكمل فخامتك في الماب.</li>
+                <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>ألقاب الأساطير:</b> الحساب فيه 6 ألقاب نادرة تثبت إنك لاعب "قديم" ومحترف من الطراز الأول.</li>
+            </ul>
+        </details>
+        <div class="account-id">ID: 52178646075</div>
+        <div class="price-display-royal">
+            <span class="old-price">499 EG</span>
+            <span class="current-price">349 EG</span>
         </div>
+        
+        <a href="https://discord.gg/rxneXG2PxS" class="buy-btn-royal discord">🛒 إتمام الشراء (ديسكورد)</a>
+        <a href="https://wa.me/qr/IK3VK7C26SEGG1" class="buy-btn-royal whatsapp">🛒 إتمام الشراء (واتساب)</a>
+    </div>
+
+
+
+</div>
+<div class="service-box">
+    <div class="discount-ribbon-royal">خصم 20%</div>
+    <div class="ramadan-lantern-animated">
+        <img src="img/ramdan.png" alt="Ramadan Lantern" style="width: 100%; height: 100%;">
+    </div>
+
+    <img src="img/18.png" style="width: 100%;height: 100%;" class="account-img" alt="Roblox Account">
+    
+    <div class="content-padding">
+        <h2>حساب روبلوكس (Roblox)</h2>
+        
+        <details>
+            <summary>
+                عرض تفاصيل الحساب المميزات
+            </summary>
+            <ul class="specs-list" style="text-align: right; direction: rtl; padding: 15px;">
+                <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
+                    <b>💰 مخزن الروبكس المفتوح:</b> الحساب ده مش لسه بادئ، ده "حصالة" روبكس بقالها سنين شحن وتطوير. آلاف الروبكس اتصرفت في الشوب عشان السكنات والخدمات، يعني بتشتري حساب قيمته بتزيد مش بتقل، استثمار حقيقي يا صاحبي.
+                </li>
+                <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
+                    <b>👕 دولاب الـ "ممنوعات":</b> انسى السكنات العادية، الحساب فيه "ترسانة" لبس وأطقم كاملة <b>Limited</b> وتيشرتات كانت بتنزل في مناسبات معينة ومبقتش موجودة. هتكون المميز في أي ماب تدخله، والكل هيسألك "جبت اللبس ده منين؟".
+                </li>
+                <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
+                    <b>💎 إكسسوارات وهيبة الـ OG:</b> مليان أجنحة خرافية، شعور نادرة، وقبعات أسطورية من إيفنتات قديمة جداً. الحاجات دي دلوقتي بتعتبر "تحف فنية" في روبلوكس ومستحيل ترجع الشوب تاني، يعني معاك قطع أثرية في حسابك.
+                </li>
+                <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
+                    <b>🌪️ أسطورة Steel Ball و Blox Fruits:</b> الحساب ده "وحش" في ماب <b>Steel Ball (Steel Ball Run)</b> ومنجز فيها ليفلات تخلصك من وجع الدماغ، ده غير إنك ملك في <b>Blox Fruits</b> ومعاك فواكه وتطويرات تخليك تفرتك أي حد يقف قدامك.
+                </li>
+                <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
+                    <b>🏡 مسيطر في Garden و Pet Sim:</b> مش سايب ماب في حالها، لفل عالي جداً في <b>Garten of Banban (Garden)</b> ومطور حسابك في <b>Pet Sim</b>.. الحساب ده متعوب عليه بجد ومش محتاج منك غير إنك تدخل تلعب وتستمتع بالسيطرة علطول.
+                </li>
+                <li style="margin-bottom: 20px; border-right: 4px solid #313131; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;">
+                    ويوجد به حالياً روب 🔥
+                </li>
+            </ul>
+        </details>
+        <div class="account-id">User: htmlcssjsphp37</div>
+        <div class="price-display-royal">
+            <span class="old-price">899 EG</span>
+            <span class="current-price">699 EG</span>
+        </div>
+        
+        <a href="https://discord.gg/rxneXG2PxS" class="buy-btn-royal discord">🛒 إتمام الشراء (ديسكورد)</a>
+        <a href="https://wa.me/qr/IK3VK7C26SEGG1" class="buy-btn-royal whatsapp">🛒 إتمام الشراء (واتساب)</a>
+    </div>
+
+
+</div>
+
+<div class="service-box">
+    <div class="discount-ribbon-royal">خصم 40%</div>
+    <div class="ramadan-lantern-animated">
+        <img src="img/ramdan.png" alt="Ramadan Lantern" style="width: 100%; height: 100%;">
+    </div>
+
+    <img src="img/19.png" style="width: 100%;height: 100%;" class="account-img" alt="Roblox Account">
+    
+    <div class="content-padding">
+        <h2>حساب روبلوكس (Roblox)</h2>
+        
+        <details>
+            <summary>
+                عرض تفاصيل الحساب المميزات
+            </summary>
+            <ul class="specs-list" style="text-align: right; direction: rtl; padding: 15px;">
+                <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>مخزن الروبكس:</b> الحساب مصروف عليه آلاف الروبكس عبر السنين، يعني مش مجرد لبس عادي ده استثمار حقيقي.</li>
+                <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>خزانة ملابس أسطورية:</b> بيحتوي على مئات التيشرتات والبنطلونات والأطقم الكاملة (Limited Edition) اللي مستحيل تلاقيها دلوقتي.</li>
+                <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>إكسسوارات نادرة:</b> الحساب مليان "أجنحة، شعور، وقبعات" كانت بتنزل في إيفنتات قديمة ومستحيل ترجع للمتجر تاني.</li>
+                <li style="margin-bottom: 20px; border-right: 4px solid #ffc107; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>تطوير شامل ومتقدم:</b> الحساب مش بس شكل، ده واصل لمستويات عالية جداً في أشهر المابات (Blox Fruits, Pet Sim) وجاهز للسيطرة فوراً.</li>
+                
+                <hr style="opacity: 0.1; margin: 15px 0;">
+                
+                <li style="color: #ff5722;margin-bottom: 20px; border-right: 4px solid #ffffff; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>🦊 قوة الكيتسوني:</b> في عالم روبلوكس، الحساب واكل فاكهة <b>Kitsune</b> (أغلى وأقوى فاكهة)، ولفله ممتاز وجاهز للجلد.</li>
+                <li style="color: #ff5722;margin-bottom: 20px; border-right: 4px solid #ffffff; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>💃 رقصات ليميتد:</b> يحتوي الحساب على رقصات <b>Limited</b> نادرة مش عند أي حد، وملابس جاهزة بتنسيقات (Outfits) خرافية.</li>
+                <li style="color: #ff5722;margin-bottom: 20px; border-right: 4px solid #ffffff; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>🏗️ متلفل في مابات كتير:</b> الحساب متعوب عليه ومنجز خطوات كبيرة في مابات مشهورة، يعني هتوفر على نفسك تعب شهور.</li>
+                <li style="color: #ff5722;margin-bottom: 20px; border-right: 4px solid #ffffff; padding-right: 15px; background: rgba(255,255,255,0.03); padding: 15px;"><b>💎 مصروف عليه روبكس:</b> الحساب استثمار حقيقي، مصروف عليه كمية روبكس محترمة في السكنات والخدمات (Gamepasses).</li>
+            </ul>
+        </details>
+        <div class="account-id">User: ufndym</div>
+        <div class="price-display-royal">
+            <span class="old-price">499 EG</span>
+            <span class="current-price">299 EG</span>
+        </div>
+        
+        <a href="https://discord.gg/rxneXG2PxS" class="buy-btn-royal discord">🛒 إتمام الشراء (ديسكورد)</a>
+        <a href="https://wa.me/qr/IK3VK7C26SEGG1" class="buy-btn-royal whatsapp">🛒 إتمام الشراء (واتساب)</a>
+    </div>
 
 
     </main>
+    <style>
+        @keyframes swing {
+            0%, 100% { transform: rotate(-15deg); }
+            50% { transform: rotate(15deg); }
+        }
+        </style>
     <style>
         /* التعديل اللي هيخلي كل كارت ياخد السطر لوحده */
         .container {

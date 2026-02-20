@@ -29,7 +29,7 @@ header {
     width: 100%;
     background: var(--card-bg);
     box-shadow: var(--shadow);
-    z-index: 1000;
+    z-index: 999;
     padding: 10px 0;
 }
 
@@ -291,4 +291,143 @@ body.dark-mode .sun { display: block; }
 /* تأثير بسيط عند الهوفر */
 .mode-btn:hover {
     transform: scale(1.1);
+}
+/* --- لمسات رمضان الكريم --- */
+:root {
+    --ramadan-gold: #d4af37;
+    --ramadan-dark: #1a2a6c;
+}
+
+body {
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    background-attachment: fixed;
+}
+
+/* إضافة صورة الفوانيس كخلفية */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 100px;
+    width: 70%;
+    height: 70%;
+    background: url('img/ramdan.png') no-repeat center center/contain;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 99;
+}
+
+/* تزيين البطاقات */
+.service-box, .rule-block {
+    border: 2px solid var(--ramadan-gold) !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
+}
+
+h2 {
+    color: var(--ramadan-dark);
+    text-shadow: 1px 1px 2px rgba(212, 175, 55, 0.5);
+}
+
+.discord-btn, .whatsapp-btn {
+    border-radius: 20px !important;
+    border: 1px solid var(--ramadan-gold) !important;
+    transition: 0.3s;
+}
+
+.discord-btn:hover, .whatsapp-btn:hover {
+    background-color: var(--ramadan-gold) !important;
+    color: white !important;
+}
+
+/* توافق الدارك مود مع الطابع الرمضاني */
+body.dark-mode {
+    background: #0d1b2a !important;
+}
+
+body.dark-mode .service-box, 
+body.dark-mode .rule-block {
+    background: rgba(39, 59, 97, 0.9) !important;
+    border-color: var(--ramadan-gold) !important;
+}
+
+/* تعريف حركة التأرجح للفوانيس */
+@keyframes swing {
+    0% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+
+/* تطبيق الحركة على صورة الفوانيس */
+body::before {
+    content: "";
+    top: 0;
+    left: 20px; /* يمكنك تغيير المكان هنا */
+    background: url('img/ramdan.png') no-repeat center top/contain;
+    z-index: 99;
+    pointer-events: none; /* عشان تقدر تضغط على الأزرار اللي تحتها */
+    transform-origin: top center;
+    animation: swing 3s ease-in-out infinite;
+}
+
+.countdown-container {
+    text-align: center;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+    max-width: 600px;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.time-box {
+    background: #1a2a6c;
+    color: #d4af37;
+    padding: 10px 15px;
+    border-radius: 8px;
+    min-width: 60px;
+    font-weight: bold;
+}
+
+.time-box span {
+    display: block;
+    font-size: 1.5rem;
+}
+
+/* 1. حل مشكلة العداد القص وتمركزه */
+.countdown-container {
+    text-align: center;
+    margin: 20px auto; /* مسافة طبيعية فوق وتحت */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+    max-width: 800px;
+    display: block; /* التأكد أنه ليس ثابتًا */
+    position: relative;
+    z-index: 1;
+}
+
+/* 2. حل مشكلة ألوان الدارك مود */
+body.dark-mode .countdown-container h2, 
+body.dark-mode .countdown-container .time-box {
+    color: #fff !important; /* جعل الخط أبيض في الدارك مود */
+}
+
+body.dark-mode .time-box {
+    background: #000 !important; /* خلفية سوداء للعداد في الدارك مود */
+    border: 1px solid #d4af37;
+}
+
+/* تعديل عام للنصوص لضمان عدم ظهور أزرق مزعج في الدارك مود */
+body.dark-mode h2, 
+body.dark-mode p {
+    color: #e0e0e0 !important;
 }

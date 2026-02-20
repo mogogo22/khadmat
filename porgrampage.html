@@ -235,6 +235,80 @@
         body.dark-mode .dark-notice {
             display: none !important;
         }
+        /* أضف هذا للجزء الخاص بالـ :root في الـ CSS */
+:root {
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --price-bg: #f0f0f0;
+    --old-price-color: #ff4757;
+    --current-price-color: #28a745;
+    --border-color: #ddd;
+    --badge-bg: #d4af37;
+}
+
+body.dark-mode {
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --price-bg: #121b24;
+    --old-price-color: #ff6b6b;
+    --current-price-color: #32ff7e;
+    --border-color: #d4af37;
+}
+
+/* تنسيق الكرت الجديد */
+.service-box {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    position: relative;
+    border-radius: 20px;
+    padding: 0;
+    transition: 0.3s;
+}
+
+/* شارة الخصم الثابتة */
+.ramadan-badge {
+    position: absolute;
+    top: 15px;
+    right: -10px;
+    background: var(--badge-bg);
+    color: #000;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 5px 0 0 5px;
+    z-index: 10;
+}
+
+/* السعر الجديد */
+.price-container {
+    background: var(--price-bg);
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.old-price { text-decoration: line-through; color: var(--old-price-color); }
+.current-price { color: var(--current-price-color); font-weight: bold; font-size: 1.2rem; }
+.price-container {
+    background: #1a2a3a; /* خلفية الحاوية الغامقة */
+    padding: 10px;
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+.old-price {
+    display: block; /* لجعل السعر القديم في سطر منفصل */
+    text-decoration: line-through;
+    color: rgb(236, 150, 150); /* لون رمادي خفيف للسعر المشطوب */
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.current-price {
+    display: block; /* لجعل السعر الجديد في سطر منفصل */
+    color: #32ff7e; /* اللون الأخضر المميز */
+    font-size: 1.5rem;
+    font-weight: bold;
+}
         </style>
 </head>
 <body>
@@ -259,92 +333,118 @@
         <h1 class="page-title">💻 خدمات البرمجة وتطوير المواقع</h1>
 
         <div class="service-box">
+            <div class="ramadan-badge">خصم 50%</div>
             <img src="img/6.png" class="preview-img" alt="Bio Site">
             <div class="content-padding">
                 <mark>التسليم: 2-3 أيام</mark>
                 <h2>تصميم موقع لمحة عن شخص</h2>
                 <div class="type-badge">النوع: Link</div>
                 <div class="features">عدد الصفحات: صفحة واحدة</div>
-                <div class="prices">
-                    <p>💰 200.EG جنيه</p>
+                
+                <div class="price-container">
+                    <span class="old-price">EGP 200</span>
+                    <span class="current-price">EGP 100</span>
                 </div>
+                <mark>يمكنك تزويد الصفحات بالدفع 50% من المبلغ</mark><br>
+                <h1 style="font-size: 12px;">(على حسب محتويات الصفحة)</h1>
+                
                 <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 طلب البرمجة (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn"> 🛒 طلب البرمجة (واتساب)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;"> 🛒 طلب البرمجة (واتساب)</a>
             </div>
         </div>
 
         <div class="service-box">
+            <div class="ramadan-badge">خصم 50%</div>
             <img src="img/5.png" class="preview-img" alt="Bio Site">
             <div class="content-padding">
                 <mark>التسليم: 2-3 أيام</mark>
                 <h2>تصميم موقع لعبة خفيفة</h2>
                 <div class="type-badge">النوع: Link</div>
                 <div class="features">عدد الصفحات: صفحة واحدة</div>
-                <div class="prices">
-                    <p>💰 100.EG جنيه</p>
+                <div class="price-container">
+                    <span class="old-price">EGP 100</span>
+                    <span class="current-price">EGP 50</span>
                 </div>
+                <mark>يمكنك تزويد الصفحات بالدفع 50% من المبلغ</mark><br>
+                <h1 style="font-size: 12px;">(على حسب محتويات الصفحة)</h1>
                 <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 طلب البرمجة (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn"> 🛒 طلب البرمجة (واتساب)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;"> 🛒 طلب البرمجة (واتساب)</a>
             </div>
         </div>
-
+        
         <div class="service-box">
+            <div class="ramadan-badge">خصم 70%</div>
             <img src="img/4.png" class="preview-img" alt="Bio Site">
             <div class="content-padding">
                 <mark>التسليم: 2-3 أيام</mark>
                 <h2>تصميم موقع لقناة شخص</h2>
                 <div class="type-badge">النوع: Link</div>
                 <div class="features">عدد الصفحات: صفحة واحدة</div>
-                <div class="prices">
-                    <p>💰 300.EG جنيه</p>
+                <div class="price-container">
+                    <span class="old-price">EGP 300</span>
+                    <span class="current-price">EGP 90</span>
                 </div>
+                <mark>يمكنك تزويد الصفحات بالدفع 50% من المبلغ</mark><br>
+                <h1 style="font-size: 12px;">(على حسب محتويات الصفحة)</h1>
                 <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 طلب البرمجة (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn"> 🛒 طلب البرمجة (واتساب)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;"> 🛒 طلب البرمجة (واتساب)</a>
             </div>
         </div>
-
+        
         <div class="service-box">
+            <div class="ramadan-badge">خصم 50%</div>
             <img src="img/9.png" class="preview-img" alt="Bio Site">
             <div class="content-padding">
                 <mark>التسليم: 5-10 أيام</mark>
                 <h2>موقع لمحة احترافي (SEO)</h2>
-                <div class="type-badge"> النوع: SEO</div>
+                <div class="type-badge">النوع: SEO</div>
                 <div class="features">عدد الصفحات: صفحة واحدة</div>
-                <div class="prices">
-                    <p>💰 300.EG جنيه</p>
+                <div class="price-container">
+                    <span class="old-price">EGP 300</span>
+                    <span class="current-price">EGP 150</span>
                 </div>
+                <mark>يمكنك تزويد الصفحات بالدفع 50% من المبلغ</mark><br>
+                <h1 style="font-size: 12px;">(على حسب محتويات الصفحة)</h1>
                 <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 طلب البرمجة (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn"> 🛒 طلب البرمجة (واتساب)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;"> 🛒 طلب البرمجة (واتساب)</a>
             </div>
         </div>
-
+        
         <div class="service-box">
+            <div class="ramadan-badge">خصم 50%</div>
             <img src="img/8.png" class="preview-img" alt="Bio Site">
             <div class="content-padding">
                 <mark>التسليم: 3-7 أيام</mark>
                 <h2>تصميم موقع لعبة قوية</h2>
-                <div class="type-badge"> النوع: SEO</div>
+                <div class="type-badge">النوع: SEO</div>
                 <div class="features">عدد الصفحات: صفحة واحدة</div>
-                <div class="prices">
-                    <p>💰 200.EG جنيه</p>
+                <div class="price-container">
+                    <span class="old-price">EGP 200</span>
+                    <span class="current-price">EGP 100</span>
                 </div>
+                <mark>يمكنك تزويد الصفحات بالدفع 50% من المبلغ</mark><br>
+                <h1 style="font-size: 12px;">(على حسب محتويات الصفحة)</h1>
                 <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 طلب البرمجة (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn"> 🛒 طلب البرمجة (واتساب)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;"> 🛒 طلب البرمجة (واتساب)</a>
             </div>
         </div>
-
+        
         <div class="service-box">
+            <div class="ramadan-badge">خصم 50%</div>
             <img src="img/7.png" class="preview-img" alt="Bio Site">
             <div class="content-padding">
                 <mark>التسليم: 6-12 أيام</mark>
                 <h2>موقع قناة متطور (SEO)</h2>
-                <div class="type-badge"> النوع: SEO</div>
+                <div class="type-badge">النوع: SEO</div>
                 <div class="features">عدد الصفحات: صفحة واحدة</div>
-                <div class="prices">
-                    <p>💰 500.EG جنيه</p>
+                <div class="price-container">
+                    <span class="old-price">EGP 500</span>
+                    <span class="current-price">EGP 250</span>
                 </div>
+                <mark>يمكنك تزويد الصفحات بالدفع 50% من المبلغ</mark><br>
+                <h1 style="font-size: 12px;">(على حسب محتويات الصفحة)</h1>
                 <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 طلب البرمجة (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn"> 🛒 طلب البرمجة (واتساب)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;"> 🛒 طلب البرمجة (واتساب)</a>
             </div>
         </div>
     </main>

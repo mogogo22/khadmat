@@ -211,6 +211,36 @@
         @media (max-width: 600px) {
             .container { grid-template-columns: 1fr; }
         }
+        .ramadan-badge {
+    background: #e91e63;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+.price-container {
+    background: rgba(0,0,0,0.05);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 1px dashed var(--primary);
+}
+.old-price {
+    display: block;
+    text-decoration: line-through;
+    color: #888;
+    font-size: 0.9rem;
+}
+.current-price {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
     </style>
     <style>
         /* تنسيق رسالة التنبيه */
@@ -249,6 +279,41 @@
         body.dark-mode .dark-notice {
             display: none !important;
         }
+        .discount-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* أو left حسب مكانها في الصورة */
+    background: #d4af37; /* اللون الذهبي */
+    color: #000;
+    padding: 5px 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    z-index: 10;
+}
+
+.price-container {
+    background: #1a2a3a; 
+    padding: 10px;
+    border-radius: 12px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.old-price {
+    display: block;
+    text-decoration: line-through;
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.current-price {
+    display: block;
+    color: #32ff7e;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
         </style>
 </head>
 <body>
@@ -272,155 +337,165 @@
     <main class="container">
         <h1 class="page-title">🎨 معرض خدمات تصميم الصور</h1>
 
-        <div class="service-box">
+        <div class="service-box" style="position: relative;">
+            <div class="discount-badge">خصم 100%</div>
+            
             <div class="img-container">
-                <img src="img/12.png" alt="Light Design">
+                <img src="img/12.png" alt="Design">
             </div>
+            
             <div class="content-padding">
                 <mark>الكمية غير محدودة</mark>
                 <h2>تصميم صورة خفيفة</h2>
                 <p class="resolution">1920 X 1080 : الدقة</p>
-                <div class="prices">
-                    <p>💰 30.EG جنيه</p>
+                
+                <div class="price-container">
+                    <span class="old-price">EGP 30</span>
+                    <span class="current-price">مجاناً</span>
                 </div>
+                
                 <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;">🛒 شراء التصميم (واتساب)</a>
             </div>
         </div>
 
-        <div class="service-box">
+        <div class="service-box" style="position: relative;">
+            <div class="discount-badge">خصم 50%</div>
             <div class="img-container">
-                <img src="img/11.png" alt="Light Design">
+                <img src="img/11.png" alt="Modern Design">
             </div>
             <div class="content-padding">
                 <mark>الكمية غير محدودة</mark>
                 <h2>تصميم صورة عصرية</h2>
                 <p class="resolution">1920 X 1080 : الدقة</p>
-                <div class="prices">
-                    <p>💰 50.EG جنيه</p>
+                <div class="price-container">
+                    <span class="old-price">EGP 50</span>
+                    <span class="current-price">EGP 25</span>
                 </div>
                 <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;">🛒 شراء التصميم (واتساب)</a>
             </div>
         </div>
-
-        <div class="service-box">
+        
+        <div class="service-box" style="position: relative;">
             <div class="img-container">
-                <img src="img/10.png" alt="Light Design">
+                <img src="img/10.png" alt="Gaming Design">
             </div>
             <div class="content-padding">
                 <mark>الكمية غير محدودة</mark>
                 <h2>تصميم صورة ألعاب</h2>
                 <p class="resolution">1920 X 1080 : الدقة</p>
-                <div class="prices">
-                    <p>💰 30.EG جنيه</p>
+                <div class="price-container">
+                    <span class="current-price">EGP 30</span>
                 </div>
                 <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;">🛒 شراء التصميم (واتساب)</a>
             </div>
         </div>
-
-        <div class="service-box">
+        
+        <div class="service-box" style="position: relative;">
+            <div class="discount-badge">خصم 50%</div>
             <div class="img-container">
-                <img src="img/15.jpg" alt="Light Design">
+                <img src="img/15.jpg" alt="Professional Design">
             </div>
             <div class="content-padding">
                 <mark>الكمية غير محدودة</mark>
                 <h2>تصميم صورة إحترافية</h2>
                 <p class="resolution">1920 X 1080 : الدقة</p>
-                <div class="prices">
-                    <p>💰 50.EG جنيه</p>
+                <div class="price-container">
+                    <span class="old-price">EGP 50</span>
+                    <span class="current-price">EGP 25</span>
                 </div>
                 <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;">🛒 شراء التصميم (واتساب)</a>
             </div>
         </div>
-
-        <div class="service-box">
+        
+        <div class="service-box" style="position: relative;">
+            <div class="discount-badge">خصم 50%</div>
             <div class="img-container">
-                <img src="img/14.png" alt="Light Design">
+                <img src="img/14.png" alt="Inspiring Design">
             </div>
             <div class="content-padding">
                 <mark>الكمية غير محدودة</mark>
                 <h2>تصميم صورة ملهمة</h2>
                 <p class="resolution">1920 X 1080 : الدقة</p>
-                <div class="prices">
-                    <p>💰 70.EG جنيه</p>
+                <div class="price-container">
+                    <span class="old-price">EGP 70</span>
+                    <span class="current-price">EGP 35</span>
                 </div>
                 <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;">🛒 شراء التصميم (واتساب)</a>
             </div>
         </div>
-
-        <div class="service-box">
+        
+        <div class="service-box" style="position: relative;">
+            <div class="discount-badge">خصم 50%</div>
             <div class="img-container">
-                <img src="img/13.png" alt="Light Design">
+                <img src="img/13.png" alt="Story Design">
             </div>
             <div class="content-padding">
                 <mark>الكمية غير محدودة</mark>
                 <h2>تصميم صورة للقصص</h2>
                 <p class="resolution">1920 X 1080 : الدقة</p>
-                <div class="prices">
-                    <p>💰 50.EG جنيه</p>
+                <div class="price-container">
+                    <span class="old-price">EGP 50</span>
+                    <span class="current-price">EGP 25</span>
                 </div>
                 <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;">🛒 شراء التصميم (واتساب)</a>
             </div>
         </div>
-
+        
         <h1 class="section-divider">🎁 ملحقات المصممين</h1>
-
-<div class="container" style="margin-top: 0;"> 
-    
-    <div class="service-box">
-        <div class="img-container">
-            <img src="img/photo.png" alt="PSD Packs">
-        </div>
-        <div class="content-padding">
-            <mark>الكمية غير محدودة</mark>
-            <h2>تصميمات PSD جاهزة</h2>
-            <p class="resolution">قابلة للتعديل بالكامل</p>
-            <div class="prices">
-                <p>💰 30.EG جنيه</p>
+        
+        <div class="container" style="margin-top: 0;"> 
+            <div class="service-box" style="position: relative;">
+                <div class="img-container"><img src="img/photo.png" alt="PSD Packs"></div>
+                <div class="content-padding">
+                    <mark>الكمية غير محدودة</mark>
+                    <h2>تصميمات PSD جاهزة</h2>
+                    <p class="resolution">قابلة للتعديل بالكامل</p>
+                    <div class="price-container">
+                        <span class="current-price">مجاناً</span>
+                    </div>
+                    <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
+                    <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;">🛒 شراء التصميم (واتساب)</a>
+                </div>
             </div>
-            <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
-            <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
-        </div>
-    </div>
-
-    <div class="service-box">
-        <div class="img-container">
-            <img src="img/photo.png" alt="PSD Packs">
-        </div>
-        <div class="content-padding">
-            <mark>الكمية غير محدودة</mark>
-            <h2>جميع الخطوط للمونتاج والتصميم 🔥</h2>
-            <p class="resolution">أكثر من (+50) خط</p>
-            <div class="prices">
-                <p>💰 50.EG جنيه</p>
+        
+            <div class="service-box" style="position: relative;">
+                <div class="discount-badge">خصم 50%</div>
+                <div class="img-container"><img src="img/photo.png" alt="Fonts"></div>
+                <div class="content-padding">
+                    <mark>الكمية غير محدودة</mark>
+                    <h2>جميع الخطوط للمونتاج والتصميم 🔥</h2>
+                    <p class="resolution">أكثر من (+50) خط</p>
+                    <div class="price-container">
+                        <span class="old-price">EGP 50</span>
+                        <span class="current-price">EGP 25</span>
+                    </div>
+                    <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
+                    <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;">🛒 شراء التصميم (واتساب)</a>
+                </div>
             </div>
-            <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
-            <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
-        </div>
-    </div>
-
-    <div class="service-box">
-        <div class="img-container">
-            <img src="img/photo.png" alt="PSD Packs">
-        </div>
-        <div class="content-padding">
-            <mark>الكمية غير محدودة</mark>
-            <h2>ميمز MOHAND WORLD للمونتاج</h2>
-            <p class="resolution">أكثر من (+700) ميمز 🎬</p>
-            <div class="prices">
-                <p>💰 300.EG جنيه</p>
+        
+            <div class="service-box" style="position: relative;">
+                <div class="discount-badge">خصم 50%</div>
+                <div class="img-container"><img src="img/photo.png" alt="Memes"></div>
+                <div class="content-padding">
+                    <mark>الكمية غير محدودة</mark>
+                    <h2>ميمز MOHAND WORLD للمونتاج</h2>
+                    <p class="resolution">أكثر من (+700) ميمز 🎬</p>
+                    <div class="price-container">
+                        <span class="old-price">EGP 300</span>
+                        <span class="current-price">EGP 150</span>
+                    </div>
+                    <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
+                    <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;">🛒 شراء التصميم (واتساب)</a>
+                </div>
             </div>
-            <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn">🛒 شراء التصميم (ديسكورد)</a>
-            <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn">🛒 شراء التصميم (واتساب)</a>
         </div>
-    </div>
-
-</div>
 
     </main>
 

@@ -216,6 +216,52 @@
         @media (max-width: 600px) {
             .container { grid-template-columns: 1fr; }
         }
+
+        /* الكارت الرمضاني الثابت */
+.service-box {
+    background: #1a2a3a;
+    border: 2px solid #d4af37;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden; /* عشان الشارة تطلع بره لو عايز */
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+/* الشارة الرمضانية (دي هتكون ظاهرة دايماً) */
+.ramadan-badge {
+    position: absolute;
+    top: 15px;
+    right: -10px;
+    background: #d4af37;
+    color: #000;
+    padding: 5px 20px;
+    font-weight: bold;
+    border-radius: 5px 0 0 5px;
+    box-shadow: -2px 2px 5px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+/* تنسيق النصوص والأسعار */
+.price-container {
+    margin: 15px 0;
+    padding: 10px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+.old-price {
+    text-decoration: line-through;
+    color: #ff4d4d;
+    font-size: 0.9rem;
+}
+.current-price {
+    color: #32ff7e;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+}
     </style>
     <style>
         /* تنسيق رسالة التنبيه */
@@ -254,6 +300,58 @@
         body.dark-mode .dark-notice {
             display: none !important;
         }
+        :root {
+    /* ألوان الوضع الفاتح (Light Mode) */
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --price-bg: #f0f0f0;
+    --old-price-color: #888;
+    --current-price-color: #28a745;
+    --border-color: #ddd;
+}
+
+body.dark-mode {
+    /* ألوان الوضع الداكن (Dark Mode) */
+    --card-bg: #151147;
+    --text-color: #f4f4f4;
+    --price-bg: #1a2a3a;
+    --old-price-color: #ff6b6b;
+    --current-price-color: #32ff7e;
+    --border-color: #d4af37; /* ذهبي في الدارك مود للتميز */
+}
+.service-box {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    color: var(--text-color);
+    transition: 0.3s;
+    /* باقي التنسيقات */
+}
+
+.price-container {
+    background: var(--price-bg);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--old-price-color);
+}
+
+.current-price {
+    color: var(--current-price-color);
+    font-weight: bold;
+}
+.ramadan-badge {
+    background: #d4af37;
+    color: #000; /* نص أسود في اللايت مود */
+}
+
+body.dark-mode .ramadan-badge {
+    background: #d4af37;
+    color: #000; /* تظل فخمة في الدارك مود */
+}
         </style>
 </head>
 <body>
@@ -280,141 +378,157 @@
         <h1 class="section-title">🎬 خدمات المونتاج الاحترافي</h1>
 
         <div class="service-box">
+            <div class="ramadan-badge">خصم 50%</div>
+            
             <div class="img-container">
-                <img src="img/1.png" alt="">
+                <img src="img/1.png" alt="مونتاج">
             </div>
+            
             <div class="content-padding">
                 <mark>التسليم: أسبوع أو أقل</mark>
                 <h2>تصميم فيديو يوتيوب</h2>
                 <h3>1920 X 1080 : الدقة</h3>
                 <h3>المدة: حتى 3 دقائق</h3>
-                <div class="prices">
-                    <p>💰 300.EG جنيه</p>
+                
+                <div class="price-container">
+                    <span class="old-price">300 EGP</span>
+                    <span class="current-price">150 EGP</span>
                 </div>
-                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 شراء الخدمة (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn"> 🛒 شراء الخدمة (واتساب)</a>
+                <mark>يمكنك تزويد الوقت  بالدفع 30% من المبلغ</mark>
+                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn" style="background:#7289da;"> 🛒 شراء الخدمة (ديسكورد)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;"> 🛒 شراء الخدمة (واتساب)</a>
             </div>
         </div>
-
         <div class="service-box">
-            <div class="img-container">
-                <img src="img/2.png" alt="">
-            </div>
+            <div class="ramadan-badge">خصم 50%</div>
+            <div class="img-container"><img src="img/2.png" alt="قصص"></div>
             <div class="content-padding">
                 <mark>التسليم: أسبوع أو أقل</mark>
                 <h2>يوتيوب قصص (Storytelling)</h2>
                 <h3>1920 X 1080 : الدقة</h3>
                 <h3>المدة: حتى 3 دقائق</h3>
-                <div class="prices">
-                    <p>💰 200.EG جنيه</p>
+                <div class="price-container">
+                    <span class="old-price">200 EGP</span>
+                    <span class="current-price">100 EGP</span>
                 </div>
-                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 شراء الخدمة (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn"> 🛒 شراء الخدمة (واتساب)</a>
+                <mark>يمكنك تزويد الوقت  بالدفع 30% من المبلغ</mark>
+
+                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn" style="background:#7289da;"> 🛒 شراء الخدمة (ديسكورد)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;"> 🛒 شراء الخدمة (واتساب)</a>
             </div>
         </div>
-
+        
         <div class="service-box">
-            <div class="img-container">
-                <img src="img/3.png" alt="">
-            </div>
+            <div class="ramadan-badge">خصم 30%</div>
+            <div class="img-container"><img src="img/3.png" alt="فيديو قصير"></div>
             <div class="content-padding">
                 <mark>التسليم: أسبوع أو أقل</mark>
-                <h2>فيديو قصير (Shorts/TikTok/Edits)</h2>
+                <h2 style="font-size: 20px;">فيديو قصير (Shorts/TikTok/Edits)</h2>
                 <h3>4K : الدقة</h3>
                 <h3>المدة: حتى 30 ثانية</h3>
-                <div class="prices">
-                    <p>💰 100.EG جنيه</p>
+                <div class="price-container">
+                    <span class="old-price">100 EGP</span>
+                    <span class="current-price">70 EGP</span>
                 </div>
-                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 شراء الخدمة (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn"> 🛒 شراء الخدمة (واتساب)</a>
+                <mark>يمكنك تزويد الوقت  بالدفع 30% من المبلغ</mark>
+                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn" style="background:#7289da;"> 🛒 شراء الخدمة (ديسكورد)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;"> 🛒 شراء الخدمة (واتساب)</a>
             </div>
         </div>
-
+        
         <h1 class="section-title">🎁 ملحقات المونتاج</h1>
-
+        
         <div class="service-box">
-            <img src="img/adobe.jpeg" class="addon-img" alt="حزمة تأثيرات">
+            <img src="img/adobe.jpeg" class="addon-img" alt="Adobe Premiere">
             <div class="content-padding">
                 <mark>الكمية: غير محدودة</mark>
                 <h2>التطبيق : Adobe Premiere</h2>
                 <h3>أكثر من 200+ تأثير وانتقالات</h3>
-                <h3>MOHAND WORLD جاهزة من ffx ملحقات</h3>
-                <div class="prices">
-                    <p>💰 50.EG جنيه</p>
+                <div class="price-container">
+                    <span class="current-price">50 EGP</span>
                 </div>
-                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 شراء الحزمة (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn"> 🛒 شراء الحزمة (واتساب)</a>
+                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn" style="background:#7289da;"> 🛒 شراء الحزمة (ديسكورد)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;"> 🛒 شراء الحزمة (واتساب)</a>
             </div>
         </div>
-
+        
         <div class="service-box">
-            <img src="img/after.PNG" class="addon-img" alt="حزمة تأثيرات">
+            <div class="ramadan-badge">خصم 50%</div>
+            <img src="img/after.PNG" class="addon-img" alt="After Effects">
             <div class="content-padding">
                 <mark>الكمية: غير محدودة</mark>
                 <h2>التطبيق : Adobe After Effects</h2>
                 <h3>أكثر من 40+ تأثير وانتقالات</h3>
-                <h3>MOHAND WORLD جاهزة من ffx ملحقات</h3>
-                <div class="prices">
-                    <p>💰 100.EG جنيه</p>
+                <div class="price-container">
+                    <span class="old-price">100 EGP</span>
+                    <span class="current-price">50 EGP</span>
                 </div>
-                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 شراء الحزمة (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn"> 🛒 شراء الحزمة (واتساب)</a>
+                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn" style="background:#7289da;"> 🛒 شراء الحزمة (ديسكورد)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;"> 🛒 شراء الحزمة (واتساب)</a>
             </div>
         </div>
-
+        
         <div class="service-box">
-            <img src="img/after.PNG" class="addon-img" alt="حزمة تأثيرات">
+            <div class="ramadan-badge">خصم 100%</div>
+            <img src="img/after.PNG" class="addon-img" alt="Plugins">
             <div class="content-padding">
                 <mark>الكمية: غير محدودة</mark>
                 <h2>التطبيق : Adobe After Effects</h2>
-                <h3>BCC / Deep Glow / Twixtor Pro / Twitch / Sapphire (S_shake) / Element3D</h3>
-                <div class="prices">
-                    <p>💰 100.EG جنيه</p>
+                <h3 style="font-size: 13px;">BCC / Deep Glow / Twixtor Pro / Twitch / Sapphire</h3>
+                <div class="price-container">
+                    <span class="old-price">100 EGP</span>
+                    <span class="current-price">مجاناً 🔥</span>
                 </div>
-                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 شراء الحزمة (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn"> 🛒 شراء الحزمة (واتساب)</a>
+                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn" style="background:#7289da;"> 🛒 شراء الحزمة (ديسكورد)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;"> 🛒 شراء الحزمة (واتساب)</a>
             </div>
         </div>
-
+        
         <div class="service-box">
-            <img src="img/meme.png" class="addon-img" alt="حزمة تأثيرات">
+            <div class="ramadan-badge">خصم 100%</div>
+            <img src="img/meme.png" class="addon-img" alt="صور">
             <div class="content-padding">
                 <mark>الكمية: غير محدودة</mark>
                 <h2>ملحقات صور إحترافية للمونتاج 🎬</h2>
                 <h3>أكثر من +400 صورة</h3>
-                <div class="prices">
-                    <p>💰 50.EG جنيه</p>
+                <div class="price-container">
+                    <span class="old-price">50 EGP</span>
+                    <span class="current-price">مجاناً</span>
                 </div>
-                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 شراء الحزمة (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn"> 🛒 شراء الحزمة (واتساب)</a>
+                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn" style="background:#7289da;"> 🛒 شراء الحزمة (ديسكورد)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;"> 🛒 شراء الحزمة (واتساب)</a>
             </div>
         </div>
-
+        
         <div class="service-box">
-            <img src="img/sound.png" class="addon-img" alt="حزمة تأثيرات">
+            <div class="ramadan-badge">خصم 100%</div>
+            <img src="img/sound.png" class="addon-img" alt="أصوات">
             <div class="content-padding">
                 <mark>الكمية: غير محدودة</mark>
                 <h2>ملحقات أصوات إحترافية للمونتاج 🎬</h2>
                 <h3>أكثر من +400 ساوند إفكت</h3>
-                <div class="prices">
-                    <p>💰 50.EG جنيه</p>
+                <div class="price-container">
+                    <span class="old-price">50 EGP</span>
+                    <span class="current-price">مجاناً</span>
                 </div>
-                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 شراء الحزمة (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn"> 🛒 شراء الحزمة (واتساب)</a>
+                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn" style="background:#7289da;"> 🛒 شراء الحزمة (ديسكورد)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;"> 🛒 شراء الحزمة (واتساب)</a>
             </div>
         </div>
-
+        
         <div class="service-box">
-            <img src="img/meme.png" class="addon-img" alt="حزمة تأثيرات">
+            <div class="ramadan-badge">خصم 50%</div>
+            <img src="img/meme.png" class="addon-img" alt="MOHAND WORLD">
             <div class="content-padding">
                 <mark>الكمية: غير محدودة</mark>
                 <h2>ملحقات MOHAND WORLD للمونتاج</h2>
-                <h3>أكثر من (+100) ساوند إفكت / أكثر من (+50) صورة / أكثر من (+50) فيديو</h3>
-                <div class="prices">
-                    <p>💰 200.EG جنيه</p>
+                <h3 style="font-size: 12px;">أكثر من (+100) ساوند إفكت / (+50) صورة / (+50) فيديو</h3>
+                <div class="price-container">
+                    <span class="old-price">200 EGP</span>
+                    <span class="current-price">100 EGP</span>
                 </div>
-                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn"> 🛒 شراء الحزمة (ديسكورد)</a>
-                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn"> 🛒 شراء الحزمة (واتساب)</a>
+                <a href="https://discord.gg/rxneXG2PxS" target="_blank" class="buy-btn" style="background:#7289da;"> 🛒 شراء الحزمة (ديسكورد)</a>
+                <a href="https://wa.me/qr/IK3VK7C26SEGG1" target="_blank" class="buy-btn" style="background:#25d366;"> 🛒 شراء الحزمة (واتساب)</a>
             </div>
         </div>
 
